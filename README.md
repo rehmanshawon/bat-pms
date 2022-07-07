@@ -1,6 +1,6 @@
 # BAT PMS
 
-British American Tobacco Group Performance Monitoring System
+British American Tobacco Group Performance Management System
 
 ## Getting started
 
