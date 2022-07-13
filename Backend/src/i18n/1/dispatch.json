@@ -1,0 +1,338 @@
+{
+  "parcel_send": {
+    "reference":"Reference: ",
+    "parcel_send_modalTitle": "Dispatch Information",
+    "parcel_sticker_modalTitle": "Sticker Print",
+    "receiver_modalTitle": "Receivers",
+    "sendToDispatch_confirm_message": "You want to send it to dispatch manager.",
+    "system_direct_send_confirm_message": "Send?",
+
+    "title": "Send Dispatch",
+
+    "create": "Dispatch Created Successfully!",
+    "update": "Dispatch Updated Successfully.",
+    "sender_info": "From/Sender",
+    "receiver_info": "To/Receiver",
+    "parcel_timelines": "Tracking History",
+    "parcel_type": "Dispatch Type: ",
+    "parcel_category_name": "Category: ",
+
+    "parcel_title": "Subject: ",
+    "parcel_details": "Details: ",
+    "courier_name": "Courier: ",
+    "courier_price": "Courier Price: ",
+    "vendor_code": "Vendor Code: ",
+    "vendor_contact": "Contact: ",
+
+    "status_name": "Status: ",
+    "sender_by_employee_name": "Employee: ",
+    "send_by": "Dispatch Method: ",
+
+    "courier_name_for_table": "Courier",
+    "description_for_table": "Description",
+    "price_for_table": "Price",
+
+    "is_softcopy": "Is Softcopy: ",
+    "priority": "Priority: ",
+    "is_confidential": "Is Confidential: ",
+    "manifest_code": "Manifest: ",
+
+    "sender_type": "Sender Type: ",
+    "sender_name": "Name: ",
+    "sender_branch_name": "Branch: ",
+    "sender_branch": "Branch: ",
+    "sender_department_name": "Department: ",
+    "sender_department": "Department: ",
+    "sender_geo_location": "Location: ",
+    "sender_address": "Address: ",
+    "sender_mobile": "Mobile: ",
+    "sender_remarks": "Remarks: ",
+    "receiver_type": "Receiver Type: ",
+    "receiver_name": "Name: ",
+    "receiver_branch": "Branch: ",
+    "receiver_department": "Department: ",
+    "receiver_branch_name": "Branch: ",
+    "receiver_department_name": "Department: ",
+    "receiver_geo_location": "Location: ",
+    "receiver_address": "Address: ",
+    "receiver_remarks": "Remarks: ",
+    "receiver_mobile": "Mobile: ",
+    "parcel_manifest_id_able": "Dispatch manifest attached, You can't change now.",
+
+    "parcel_code_column": "Dispatch Code",
+    "category_column": "Category",
+    "parcel_title_column": "Subject",
+    "sender_name_column": "Sender",
+    "receiver_name_column": "Receiver",
+
+    "receiver_branch_column": "Branch",
+    "receiver_department_column": "Department",
+    "receiver_address_column": "Address",
+    "receiver_mobile_column": "Mobile",
+    "receiver_remarks_column": "Remarks",
+    "received_at_column": "Received At",
+
+    "upload_required": "Please upload the attachment before submit.",
+
+    "parcel_send_confirmation": "",
+    "parcel_edit_confirmation": "",
+    
+    "deleteSuccess": "Parcel Successfully Delete",
+    "deleteError": "Parcel Remove Error",
+    "deleteParcel": "Remove this",
+
+    "parcel_receive_success": "Dispatch Received Successfully",
+    "parcel_status_update_success": "Dispatch Status Updated Successfully",
+    
+  "parcel_softcopy_send_success": "Parcel Sent Successfully!",
+
+    "swalReceiveMessage": "",
+    "swalReceiveTitle": "Are you sure?",
+    "swalReceiveButtonMessage": "Yes, Confirm",
+
+    "parcel_receive_error": "Dispatch Received Error"
+  },
+  "parcel_receive": {
+    "parcel_receive_modalTitle": "Dispatch Information",
+    "title": "Receive Dispatch",
+    "sender_info": "From/Sender",
+    "receiver_info": "To/Receiver",
+    "parcel_received": "This dispatch already recevied.",
+    "parcel_not_received": "You are not receiver of this dispatch.",
+
+    "parcel_receive_success": "Dispatch Received Successfully",
+    "parcel_receive_error": "Dispatch Received Error",
+
+    "parcel_not_send": "The dispatch has not been sent yet.",
+    "courier_name_for_table": "Courier",
+    "description_for_table": "Description",
+    "price_for_table": "Price",
+
+    "parcel_received_confirmation": "",
+    "parcel_edit_confirmation": "",
+
+    "sender_type": "Sender Type: ",
+    "sender_name": "Name: ",
+    "sender_branch_name": "Branch: ",
+    "sender_branch": "Branch: ",
+    "sender_department_name": "Department: ",
+    "sender_department": "Department: ",
+    "sender_geo_location": "Location: ",
+    "sender_address": "Address: ",
+    "sender_mobile": "Mobile: ",
+    "sender_remarks": "Remarks: ",
+    "receiver_type": "Receiver Type: ",
+    "receiver_name": "Name: ",
+    "receiver_branch": "Branch: ",
+    "receiver_department": "Department: ",
+    "receiver_branch_name": "Branch: ",
+    "receiver_department_name": "Department: ",
+    "receiver_geo_location": "Location: ",
+    "receiver_address": "Address: ",
+    "receiver_remarks": "Remarks: ",
+    "receiver_mobile": "Mobile: ",
+
+    "insert_success": "Data Successfully Created!",
+    "insert_error": "Data not insert"
+  },
+  "courier": {
+    "modalTitle": "Courier Information",
+    "courier_name": "Courier: ",
+    "address": "Address: ",
+    "contact_address": "Contact Address: ",
+    "contact_person": "Contact Person: ",
+    "email": "Email: ",
+    "vendor_code": "Vendor Code: ",
+    "vendor_contact": "Contact: ",
+    "mobile": "Mobile: ",
+
+    "update_success": "Data Updated Successfully",
+    "update_error": "Data not update",
+
+    "insert_success": "Data Successfully Created!",
+    "insert_error": "Data not insert"
+  },
+  "parcel_category": {
+    "modalTitle": "Category Information",
+    "parcel_category_name": "Name: ",
+    "description": "Description: ",
+
+    "update_success": "Category Updated Successfully",
+    "update_error": "Category not update",
+
+    "insert_success": "Category Successfully Created!",
+    "insert_error": "Category not insert"
+  },
+  "courier_price": {
+    "title": "Courier Price List",
+    "modalTitle": "Challan Information",
+    "courier_name": "Courier: ",
+    "parcel_category_name": "Category: ",
+    "geo_location_from_name": "From: ",
+    "geo_location_to_name": "To: ",
+    "price": "Price: ",
+
+    "update_success": "Courier Price Updated Successfully",
+    "update_error": "Courier Price not update",
+
+    "insert_success": "Courier Price Successfully Created!",
+    "insert_error": "Courier Price not insert"
+  },
+  "cd_parcel_manifests_create": "{code} Successfully Created!!",
+  "cd_parcel_manifests_create_error": "Error Found!!!!{code} table data not insert",
+  "cd_parcel_manifests_get": "Successfull retrieve {code} Data!!!",
+  "cd_parcel_manifests_get_error": "Error Found!!!!{code} table data not found!",
+  "cd_parcel_manifests_update": "Successfull Update {code} Data!!!",
+  "cd_parcel_manifests_update_error": "Error Found!!!!{code} table data not update!",
+  "cd_parcel_manifests_delete": "Successfull deleted {code} Data!!!",
+  "cd_parcel_manifests_delete_error": "Error Found!!!!{code} table data not Deleted!",
+
+  "config_vendors_create": "{code} Successfully Created!!",
+  "config_vendors_create_error": "Error Found!!!!{code} table data not insert",
+  "config_vendors_get": "Successfull retrieve {code} Data!!!",
+  "config_vendors_get_error": "Error Found!!!!{code} table data not found!",
+  "config_vendors_update": "Successfull Update {code} Data!!!",
+  "config_vendors_update_error": "Error Found!!!!{code} table data not update!",
+  "config_vendors_delete": "Successfull deleted {code} Data!!!",
+  "config_vendors_delete_error": "Error Found!!!!{code} table data not Deleted!",
+
+  "cd_courier_prices_create": "{code} Successfully Created!!",
+  "cd_courier_prices_create_error": "Error Found!!!!{code} table data not insert",
+  "cd_courier_prices_get": "Successfull retrieve {code} Data!!!",
+  "cd_courier_prices_get_error": "Error Found!!!!{code} table data not found!",
+  "cd_courier_prices_update": "Successfull Update {code} Data!!!",
+  "cd_courier_prices_update_error": "Error Found!!!!{code} table data not update!",
+  "cd_courier_prices_delete": "Successfull deleted {code} Data!!!",
+  "cd_courier_prices_delete_error": "Error Found!!!!{code} table data not Deleted!",
+
+  "cd_parcels_create": "{code} Successfully Created!!",
+  "cd_parcels_create_error": "Error Found!!!!{code} table data not insert",
+  "cd_parcels_get": "Successfull retrieve {code} Data!!!",
+  "cd_parcels_get_error": "Error Found!!!!{code} table data not found!",
+  "cd_parcels_update": "Successfull Update {code} Data!!!",
+  "cd_parcels_update_error": "Error Found!!!!{code} table data not update!",
+  "cd_parcels_delete": "Successfull deleted {code} Data!!!",
+  "cd_parcels_delete_error": "Error Found!!!!{code} table data not Deleted!",
+
+  "cd_parcel_categories_create": "{code} Successfully Created!!",
+  "cd_parcel_categories_create_error": "Error Found!!!!{code} table data not insert",
+  "cd_parcel_categories_get": "Successfull retrieve {code} Data!!!",
+  "cd_parcel_categories_get_error": "Error Found!!!!{code} table data not found!",
+  "cd_parcel_categories_update": "Successfull Update {code} Data!!!",
+  "cd_parcel_categories_update_error": "Error Found!!!!{code} table data not update!",
+  "cd_parcel_categories_delete": "Successfull deleted {code} Data!!!",
+  "cd_parcel_categories_delete_error": "Error Found!!!!{code} table data not Deleted!",
+
+  "cd_parcel_trackers_create": "{code} Successfully Created!!",
+  "cd_parcel_trackers_create_error": "Error Found!!!!{code} table data not insert",
+  "cd_parcel_trackers_get": "Successfull retrieve {code} Data!!!",
+  "cd_parcel_trackers_get_error": "Error Found!!!!{code} table data not found!",
+  "cd_parcel_trackers_update": "Successfull Update {code} Data!!!",
+  "cd_parcel_trackers_update_error": "Error Found!!!!{code} table data not update!",
+  "cd_parcel_trackers_delete": "Successfull deleted {code} Data!!!",
+  "cd_parcel_trackers_delete_error": "Error Found!!!!{code} table data not Deleted!",
+
+  "courier_selection": {
+    "update_success": "Courier Selected Successfully",
+    "confirmMessage": "",
+    "update_error": "Courier Not Selected"
+  },
+  "create-manifest": {
+    "parcel_code": "Dispatch Code",
+    "receiver_district": "Destination",
+    "parcel_category": "Category",
+    "parcel_title": "Subject",
+    "courier_price": "Price",
+    "attach_required": "You must need attach a file..",
+
+    "swalConfirmMessage": "after manifest confirm, you can not edit this.",
+    "swalConfirmTitle": "Are you sure?",
+    "swalConfirmButtonMessage": "Yes, Confirm",
+
+    "swalSaveMessage": "",
+    "swalSaveTitle": "Are you sure?",
+    "swalSaveButtonMessage": "Yes, Confirm",
+
+    "create_success": "Manifest Created Successfully",
+    "create_error": "Manifest Not Create!",
+    "update_success": "Manifest Updated Successfully",
+    "update_error": "Manifest Not Update!",
+
+    "courirer_not_selected": "Please select courier or messenger before create manifest.",
+    "manifest_already_created": "Manifest already created..",
+    "send_to_courier_success": "Send to Courier Successfully..",
+    "send_to_courier_error": "Send to Courier Error.",
+
+    "parcel_ids_required": "Parcel is required.",
+    "swalEditMessage": "",
+    "swalEditTitle": "Are you sure?",
+    "swalEditButtonMessage": "Yes, Confirm"
+  },
+  "dispatch_manager": {
+    "receieable_modalTitle": "Dispatch Information",
+    "sendable_modalTitle": "Dispatch Information",
+
+    "proof_of_delviery_modalTitle": "Dispatch Information", 
+    "dispatch_history_modalTitle": "Dispatch Information", 
+    "formTitleProofOfCode": "Proof Of Delivery",
+    "attach_required": "You must need attach a file..",
+    "pod_successs": "Proof Of Delivery successfully added",
+
+    "swalReceiveMessage": "",
+    "swalReceiveTitle": "Are you sure?",
+    "receive_dispatch_manager": "Are you sure?",
+    "swalReceiveButtonMessage": "Yes, Confirm",
+    "parcel_receive_success": "Dispatch Received Successfully", 
+    "dispatch_manager_parcel_receive_success": "Dispatch Received Successfully", 
+
+    "sendToDispatch_confirm_msg": "You want to send it to dispatch manager.",
+    "sendToCourier_confirm_msg": "You want to send it to courier",
+
+    "parcel_receive_error": "Dispatch Not Receive"
+  },
+  "manifest": {
+    "manifestModalTitle": "Manifest Information",
+    "modalTitle": "Dispatch Information",
+    "deleteSuccess": "Manifest Successfully Delete",
+    "deleteError": "Manifest Remove Error",
+    "deleteManifest": "Remove this",
+
+    "manifest_code": "Manifest Code: ",
+    "manifest_date": "Issue Date: ",
+    "send_by": "Dispatch Method: ",
+    "parcel_code": "Dispatch Code",
+    "receiver_district": "Destination",
+    "parcel_category": "Category",
+    "parcel_title": "Subject",
+
+    "manifest_attachment": "Manifest Attachment",
+    "courier_price": "Price"
+  },
+  "pending-receive": {
+    "parcel_receive_modalTitle": "Dispatch Information",
+    "parcel_receive_error": "Dispatch Received Error",
+    "swalReceiveMessage": "",
+    "swalReceiveTitle": "Are you sure?",
+    "swalReceiveButtonMessage": "Yes, Confirm",
+    "parcel_receive_success": "Dispatch Received Successfully",
+    "parcel_status_update_success": "Dispatch Status Updated Successfully"
+  },
+  "received-by-dispatch-code": {
+    "parcel_not_received": "You are not receiver of this dispatch.",
+    "parcel_received": "This dispatch already recevied.",
+    "parcel_not_send": "The dispatch has not been sent yet.",
+    "title": "Dispatch Receive By QR Code"
+  },
+  "parcel_not_receiver": "You are not receiver of this dispatch.",
+  "parcel_not_ready_for_receive": "The parcel has not been sent yet",
+  "parcel_already_received": "This dispatch already recevied.",
+  "parcel_receive_success": "Dispatch received successfully.",
+  "parcel_receive_error": "Error found.",
+  "parcel_code_not_match": "Parcel code not match!",
+
+  "parcel_softcopy_send_success": "Parcel Sent Successfully!",
+  "parcel_send_success": "Manifest Attach Successfully Added!",
+  "parcel_send_error": "Error found.",
+  
+  "parcel_not_send": "The dispatch has not been sent yet."
+}

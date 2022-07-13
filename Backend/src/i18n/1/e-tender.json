@@ -1,0 +1,130 @@
+{
+  "tender_create": "Tender: {code} Successfully Created!!",
+  "tender_get": "Successfull retrieve Tender: {code} Data!!!",
+  "tender_update": "Successfull Update Tender: {code} Data!!!",
+  "tender_create_error": "Error Found!!!!{code} table data not insert",
+  "tender_update_error": "Error Found!!!!{code} table data not update!",
+  "tender_create_but_not_child": "Tender Items not found",
+
+  "evaluation_create": "Tender: {code}'s Evalutions Successfully Created!!",
+  "evaluation_get": "Successfull retrieve Tender: {code}'s Evaluation Data!!!",
+  "evaluation_update": "Successfull Update Tender: {code}'s Evaluation Data!!!",
+  "evaluation_create_error": "Error Found!!!!{code} table data not insert",
+  "evaluation_update_error": "Error Found!!!!{code} table data not update!",
+  "vendor_evaluation_get": "Successfull retrieve For Vendor: {code}'s Evaluation Data!!!",
+  "tender_default_evaluation": "Successfull retrieve For Tender: {code}'s Evaluation Data!!!",
+  "evaluation_not_found": "Not Evaluation Found",
+
+  "tender_drop_create": "Successfully Tender Dropped!!",
+  "tender_drop_get": "Successfull retrieve Tender Dropped Data!!!",
+  "tender_drop_create_error": "Error Found!!!! table data not insert",
+  "tender_participant_get": "Successfull retrieve Tender Participent Data!!!",
+
+  "tenderview": {
+    "title": "TENDER INFORMATION",
+    "tender_name": "Name of Tender",
+    "tender_code": "Tender Code",
+    "tender_details": "Tender Details",
+    "tender_group": "Tender Group",
+    "tender_method": "Tender Method",
+    "tender_signing_price": "Signing Price",
+    "tender_sell_start": "Start of Tender Sell",
+    "tender_sell_end": "Closure of Tender Sell",
+    "tender_drop_end_date": "Dropping of Tender",
+    "tender_pre_bid_meeting": "Pre-bid Meeting",
+    "tender_tech_offer": "Opening of technical offer",
+    "tender_fin_offer": "Opening of financial offer",
+    "tender_publish_date": "Tender Published Date",
+    "tender_evaluation_type": "Tender Evaluation Type",
+    "tender_financial_type": "Tender Financial Type",
+    "tender_status": "Tender Status",
+
+    "product_code": "Product Code",
+    "product_description": "Product Description",
+    "product_qty": "Quantity of Product",
+    "product_price": "Product Price",
+
+    "component_title": "Tender Item's Component",
+    "component_index": "S/N",
+    "component_name": "Component Name",
+    "component_details": "Component Details"
+  },
+
+  "participantPage": {
+    "participant_details": "Tender Participant Details",
+    "vendor_evaluation": "Vendor Evaluation Details",
+    "vendor_tender_drop": "Vendor Tender Drop",
+    "tender_master_entry_title": "Tender Participant List"
+  },
+
+  "participantview": {
+    "title": "TENDER PARTICIPANT INFORMATION",
+    "vendor_name": "Vendor Name",
+    "vendor_code": "Vendor Code",
+    "application_date": "Application Date",
+    "tender_paid_amount": "Tender Paid Amount",
+    "paid_by": "Paid By",
+    "payment_ref": "Payment Ref"
+  },
+
+  "participantEvaluationMarks": {
+    "tender_name": "Tender Name",
+    "vendor_name": "Vendor Name",
+    "vendor_code": "Vendor Code",
+    "evaluate_criteria": "Qusetion",
+    "base_marks": "Base Marks",
+    "vendor_achievement": "Vendor Marks",
+    "evaluator_remarks": "Remarks"
+  },
+
+  "vendorTenderDrop": {
+    "tender_title": "TENDER INFORMATION",
+    "tender_name": "Name of Tender",
+    "tender_code": "Tender Code",
+    "tender_details": "Tender Details",
+    "tender_group": "Tender Group",
+    "tender_method": "Tender Method",
+    "tender_signing_price": "Signing Price",
+    "tender_sell_start": "Start of Tender Sell",
+    "tender_sell_end": "Closure of Tender Sell",
+    "tender_drop_end_date": "Dropping of Tender",
+    "tender_pre_bid_meeting": "Pre-bid Meeting",
+    "tender_tech_offer": "Opening of technical offer",
+    "tender_fin_offer": "Opening of financial offer",
+    "tender_publish_date": "Tender Published Date",
+    "tender_evaluation_type": "Tender Evaluation Type",
+    "tender_financial_type": "Tender Financial Type",
+
+    "vendor_title": "VENDOR INFORMATION",
+    "vendor_name": "Vendor Name",
+    "vendor_code": "Vendor Code",
+    "application_date": "Application Date",
+    "tender_paid_amount": "Tender Paid Amount",
+    "paid_by": "Paid By",
+    "payment_ref": "Payment Ref",
+
+    "product_name": "Product Name",
+    "component_name": "Component Name",
+    "request_qty": "Requested Quantity",
+    "capable_qty": "Capable Quantity",
+    "price_amount": "Unit Price",
+    "total_amount": "Total Price"
+  },
+  "ten_tender_committees_create": "{code} Successfully Created!!",
+  "ten_tender_committees_create_error": "Error Found!!!! {code} table data not insert",
+  "ten_tender_committees_get": "Successfull retrieve {code} Data!!!",
+  "ten_tender_committees_get_error": "Error Found!!!! {code} table data not update!",
+  "ten_tender_committees_update": "Successfull Update {code} Data!!!",
+  "ten_tender_committees_update_error": "Error Found!!!! {code} table data not update!",
+  "ten_tender_committees_delete": "Successfull deleted {code} Data!!!",
+  "ten_tender_committees_delete_error": "Error Found!!!! {code} table data not Deleted!",
+
+  "ten_evaluation_marks_create": "{code} Successfully Created!",
+  "ten_evaluation_marks_create_error": "Error Found! {code} table data not insert",
+  "ten_evaluation_marks_get": "Successfull retrieve {code} Data!!!",
+  "ten_evaluation_marks_get_error": "Error Found!!!! {code} table data not update!",
+  "ten_evaluation_marks_update": "Successfull Update {code} Data!!!",
+  "ten_evaluation_marks_update_error": "Error Found!!!! {code} table data not update!",
+  "ten_evaluation_marks_delete": "Successfull deleted {code} Data!!!",
+  "ten_evaluation_marks_delete_error": "Error Found!!!! {code} table data not Deleted!"
+}

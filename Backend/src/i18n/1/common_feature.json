@@ -1,0 +1,19 @@
+{
+    "decision_get": "Successfull retrieve : {code} Data!!!",
+    "decision_get_error": "Error Found!!!!{table} data doesn't exist",
+    "config_vendors_create": "config_vendors: {code} Successfully Created!!",
+    "config_vendors_create_error": "Error Found!!!!{code} table data not insert",
+    "config_vendors_get": "Successfull retrieve {code} Data!!!",
+    "config_vendors_get_error": "Error Found!!!!{code} table data not found!",
+    "config_vendors_update": "Successfull Update config_vendors {code} Data!!!",
+    "config_vendors_update_error": "Error Found!!!!{code} table data not update!",
+    "config_vendors_delete": "Successfull deleted config_vendors {code} Data!!!",
+    "config_vendors_delete_error": "Error Found!!!!{code} table data not deleted!",
+    "config_product_specification_create": "Product Specifications Successfully Created!!",
+    "config_product_specification_create_error": "Error Found!!!!{code} table data not insert",
+    "config_product_specification_get": "Successfull retrieve {code} Data!!!",
+    "config_product_specification_update": "Successfull Update Product Specifications Data!!!",
+    "config_product_specification_update_error": "Error Found!!!!{code} table data not update!",
+    "config_product_specification_delete": "Successfull deleted Product Specifications Data!!!",
+    "config_product_specification_delete_error": "Error Found!!!!{code} table data not deleted!"
+}
