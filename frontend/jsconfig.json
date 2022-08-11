@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/apsisEngine/*": ["apsisEngine/*"],
+      "@/components/*": ["components/*"],
+      "@/public/*": ["public/*"]
+    }
+  }
+}

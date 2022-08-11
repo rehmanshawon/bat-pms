@@ -118,6 +118,6 @@ async function bootstrap() {
 
   const app_port = parseInt(process.env.APP_PORT) || 4000;
   await app.listen(app_port);
-  Logger.log(`Application is running on port: ${app_port}`);
+  Logger.log(`BAT PMS Application is running on port: ${app_port}`);
 }
 bootstrap();
