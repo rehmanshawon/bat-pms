@@ -1,1 +1,0 @@
-export { XlsButton } from "./XlsButton"; 
