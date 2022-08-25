@@ -1,16 +1,16 @@
-import paletteLess from '!!raw-loader!../../assets/antd-custom.less';
-import lessToJs from 'less-vars-to-js';
-import { createGlobalStyle } from 'styled-components';
-import { objectToCamelCase } from '../../apsisEngine/helpers/helpers';
+import paletteLess from "!!raw-loader!../../assets/antd-custom.less";
+import lessToJs from "less-vars-to-js";
+import { createGlobalStyle } from "styled-components";
+import { objectToCamelCase } from "../../apsisEngine/helpers/helpers";
 
 const lessVariables = lessToJs(paletteLess, {
-		resolveVariables: true,
-		stripPrefix: true,
-	}),
-	camelCasedVariables = objectToCamelCase(lessVariables),
-	theme = {
-		...camelCasedVariables,
-	};
+    resolveVariables: true,
+    stripPrefix: true,
+  }),
+  camelCasedVariables = objectToCamelCase(lessVariables),
+  theme = {
+    ...camelCasedVariables,
+  };
 
 const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
@@ -1867,7 +1867,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .ant-menu.ant-menu-dark{
-    background:#0F1222;
+    background:${theme.primaryColor}
     color:#fff
   }
   .ant-menu-dark .ant-menu-inline.ant-menu-sub {

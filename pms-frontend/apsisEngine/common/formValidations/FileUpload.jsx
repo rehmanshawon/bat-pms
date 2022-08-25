@@ -3,13 +3,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 
-import "./FileUpload.css";
+import styles from "./FileUpload.module.css";
 import {
   swalConfirm,
   swalError,
   swalSuccess,
-} from "@/apsisEngine/helpers/helperService";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+} from "apsisEngine/helpers/helperService";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 
 const getExtension = (type) => {
   if (type.startsWith("text")) {
@@ -30,6 +30,7 @@ const allowedFileTypes = (types) => {
   return fileTypes.join(", ");
 };
 
+// eslint-disable-next-line react/display-name
 export const FileUpload = React.forwardRef((props, ref) => {
   const { reference, reference_id, reloadAttachments } = props;
   const [fileState, setFileState] = useState([]);
@@ -111,19 +112,19 @@ export const FileUpload = React.forwardRef((props, ref) => {
                 key={i}
                 onChange={changeName}
                 value={names[i]}
-                className="fileName"
+                className={styles.fileName}
                 autoComplete="off"
               />
             </td>
             <td>
-              <span className="shorter">{fileState[i].name}</span>
+              <span className={styles.shorter}>{fileState[i].name}</span>
             </td>
             <td>
-              <span className="shorter">{fileState[i].type}</span>
+              <span className={styles.shorter}>{fileState[i].type}</span>
             </td>
-            <td className="textcenter">
+            <td className={styles.textcenter}>
               <button
-                className="remove_btn"
+                className={styles.remove_btn}
                 onClick={() => handleRemove(i)}
                 value={i}
                 type="button"
@@ -272,15 +273,15 @@ export const FileUpload = React.forwardRef((props, ref) => {
   return (
     <>
       {attachConfigs.attach_config_slug && (
-        <div className="form-group">
+        <div className={styles.form - group}>
           <div className="row">
             {(!mode || mode != "view") && (
               <div className="col-md-6">
                 <h4 className="attachment_title">
                   {attachConfigs.attach_upload_label ?? "Upload File"}
                 </h4>
-                <div className="formGroup files">
-                  <div className="inputPlace">
+                <div className={styles.formGroup.files}>
+                  <div className={styles.inputPlace}>
                     <div>
                       <h5>Choose File </h5>
                       <span>
@@ -292,7 +293,7 @@ export const FileUpload = React.forwardRef((props, ref) => {
                     type="file"
                     id="files"
                     name="files"
-                    className="filesInput"
+                    className={styles.filesInput}
                     onChange={onFileChange}
                     multiple
                   />
@@ -311,8 +312,8 @@ export const FileUpload = React.forwardRef((props, ref) => {
                     )}`}</div>
                   </div>
                 </div>
-                <div className="formGroup filesList">
-                  <table className="cftable">
+                <div className={styles.formGroup.filesList}>
+                  <table className={styles.cftable}>
                     <thead>
                       <tr>
                         <th>SL</th>
@@ -328,7 +329,7 @@ export const FileUpload = React.forwardRef((props, ref) => {
                   {attachConfigs.upload_btn &&
                   fileState &&
                   fileState.length > 0 ? (
-                    <button className="uplaodBtn" onClick={uploadNow}>
+                    <button className={styles.uplaodBtn} onClick={uploadNow}>
                       <span className="apsis-loader">
                         Upload {btnLoading ? <></> : null}
                       </span>
@@ -346,13 +347,13 @@ export const FileUpload = React.forwardRef((props, ref) => {
               </div>
             ) : (
               <>
-                {files.length > 0 || mode =='view' ? (
+                {files.length > 0 || mode == "view" ? (
                   <>
                     <div className={mode === "view" ? "col-md-12" : "col-md-6"}>
                       {(!mode || mode != "view") && (
                         <h4 className="attachment_title">Attachment Items</h4>
                       )}
-                      <table className="uploadTable">
+                      <table className={styles.uploadTable}>
                         <thead>
                           <tr>
                             <th>SL</th>
@@ -368,7 +369,7 @@ export const FileUpload = React.forwardRef((props, ref) => {
                                 <td>{index + 1}</td>
                                 <td>
                                   <a
-                                    className="imageLink"
+                                    className={styles.imageLink}
                                     href={file?.attach_path}
                                     target="_blank"
                                   >
@@ -384,7 +385,7 @@ export const FileUpload = React.forwardRef((props, ref) => {
                                     download
                                   >
                                     <button
-                                      className="download_btn"
+                                      className={styles.download_btn}
                                       type="button"
                                     >
                                       <i className="fa fa-download"></i>
@@ -393,7 +394,7 @@ export const FileUpload = React.forwardRef((props, ref) => {
                                   {(!mode || mode != "view") &&
                                     (!deleteBtn || deleteBtn != "hide") && (
                                       <button
-                                        className="btn_remove"
+                                        className={styles.btn_remove}
                                         value={file.attach_log_id}
                                         onClick={() =>
                                           removeFromList(

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Checkbox } from "antd";
 
 export const FormCheckbox = ({

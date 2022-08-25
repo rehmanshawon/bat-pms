@@ -1,4 +1,4 @@
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { useRouter } from "next/router";
 
 export class FormAction {

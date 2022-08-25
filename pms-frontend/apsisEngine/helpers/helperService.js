@@ -81,14 +81,20 @@ export async function changeModule(moduleId) {
       .get(`modulechanger/${moduleId}`)
       .then((response) => {
         if (!response.error) {
-          const module = response.data;
+          const mymodule = response.data;
+          console.log(response.result);
+          console.log(
+            mymodule.module_info,
+            mymodule.menu_list,
+            mymodule.module_info.module_url
+          );
           localStorage.setItem(
             "module_info",
-            JSON.stringify(module.module_info)
+            JSON.stringify(mymodule.module_info)
           );
-          localStorage.setItem("menu_list", JSON.stringify(module.menu_list));
+          localStorage.setItem("menu_list", JSON.stringify(mymodule.menu_list));
           // Message.success("Sign in complete. Taking you to your dashboard!");
-          window.location.href = module.module_info.module_url;
+          window.location.href = mymodule.module_info.module_url;
         }
       })
       .catch((error) => {
@@ -103,6 +109,7 @@ export async function getAuthorizedModules() {
   await fetchWrapper
     .get("modulechanger/authorized-list")
     .then((response) => {
+      alert({ response });
       localStorage.setItem("module_list", JSON.stringify(response.data));
     })
     .catch((error) => {
@@ -117,6 +124,7 @@ export async function getUomPrecision() {
   await fetchWrapper
     .post("dropdown/dropdowndata", {
       dropdown_slug: "uom_precision",
+      //dropdown_slug: "branch",
     })
     .then((response) => {
       if (!response.error) {

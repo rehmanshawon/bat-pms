@@ -23,4 +23,4 @@ export {
   swalError,
   swalSuccess,
   swalConfirm,
-} from "@/apsisEngine/helpers/helperService";
+} from "apsisEngine/helpers/helperService";

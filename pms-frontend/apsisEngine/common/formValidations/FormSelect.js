@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Select } from "antd";
 
 export const FormSelect = ({

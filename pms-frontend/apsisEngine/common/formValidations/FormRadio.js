@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Radio, Space } from "antd";
 
 export const FormRadio = ({

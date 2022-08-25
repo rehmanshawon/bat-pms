@@ -124,11 +124,16 @@ const SidebarContent = ({
         <Menu.Item
           key={data.menu_id}
           className={data.menu_url == pathname ? "menu-active" : ""}
+          style={{
+            background: "linear-gradient(to left, #003578 , #0078D4)",
+          }}
         >
           <Link href={data.menu_url}>
             <a>
               <i className={`${data.menu_icon_class} mr-1`}></i>
-              <span className="mr-auto">{capitalize(data.menu_name)}</span>
+              <span className="mr-auto" style={{ fontSize: "16px" }}>
+                {capitalize(data.menu_name)}
+              </span>
             </a>
           </Link>
         </Menu.Item>
@@ -140,6 +145,10 @@ const SidebarContent = ({
           icon={<i className={`${data.menu_icon_class} mr-1`}></i>}
           title={data.menu_name}
           className={data.menu_url == pathname ? "menu-active" : ""}
+          style={{
+            fontSize: "16px",
+            background: "linear-gradient(to left, #004578 , #0078D4)",
+          }}
         >
           {data.children.map((route, index) => {
             return buildSubmenu(route, index);
@@ -168,7 +177,11 @@ const SidebarContent = ({
         inlineIndent={10}
         theme={sidebarTheme}
         className="border-0 scroll-y sidebar"
-        style={{ flex: 1, height: "100%" }}
+        style={{
+          flex: 1,
+          height: "100%",
+          background: "linear-gradient(to left, #004578 , #0078D4)",
+        }}
         mode={sidebarMode ?? "inline"}
         openKeys={openKeys}
         onOpenChange={onOpenChange}
@@ -243,10 +256,14 @@ const SidebarContent = ({
       <Inner>
         {!state.mobile && (
           <Sider
-            width={220}
+            width={300}
             className={`bg-${sidebarTheme}`}
             theme={sidebarTheme}
             collapsed={collapsed}
+            style={{
+              backgroundColor: "linear-gradient(to right, #4880EC, #019CAD)",
+              fontSize: "16px",
+            }}
           >
             {menu}
           </Sider>
@@ -304,6 +321,7 @@ const SidebarContent = ({
                 size="small"
                 checked={!!state.boxed}
                 onChange={(checked) => dispatch({ type: "boxed" })}
+                key={1}
               />,
             ]}
           >
@@ -321,6 +339,7 @@ const SidebarContent = ({
           <List.Item
             actions={[
               <Switch
+                key={2}
                 size="small"
                 checked={!!state.darkSidebar}
                 disabled={state.weakColor}
@@ -342,6 +361,7 @@ const SidebarContent = ({
           <List.Item
             actions={[
               <Switch
+                key={3}
                 size="small"
                 checked={!!state.sidebarPopup}
                 disabled={state.collapsed}
@@ -363,6 +383,7 @@ const SidebarContent = ({
           <List.Item
             actions={[
               <Switch
+                key={4}
                 size="small"
                 checked={!!state.sidebarIcons}
                 disabled={state.collapsed}
@@ -384,6 +405,7 @@ const SidebarContent = ({
           <List.Item
             actions={[
               <Switch
+                key={5}
                 size="small"
                 checked={!!state.collapsed}
                 onChange={(checked) => dispatch({ type: "collapse" })}
@@ -404,6 +426,7 @@ const SidebarContent = ({
           <List.Item
             actions={[
               <Switch
+                key={6}
                 size="small"
                 checked={!!state.weakColor}
                 onChange={(checked) =>
@@ -426,6 +449,7 @@ const SidebarContent = ({
           <List.Item
             actions={[
               <Switch
+                key={7}
                 size="small"
                 checked={!!state.direction === "rtl"}
                 onChange={(checked) =>

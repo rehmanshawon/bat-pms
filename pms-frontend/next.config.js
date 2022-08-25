@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
-const path = require('path')
-const withAntdLess = require('next-plugin-antd-less');
+const path = require("path");
+const withAntdLess = require("next-plugin-antd-less");
 
 module.exports = withAntdLess({
   reactStrictMode: true,
   swcMinify: true,
   // optional
-  modifyVars: { '@primary-color': '#04f' },
+  modifyVars: { "@primary-color": "#04f" },
   // optional
-  lessVarsFilePath: './assets/styles.less',
+  lessVarsFilePath: "./assets/styles.less",
   // optional
   lessVarsFilePathAppendToEndOfContent: false,
   // optional https://github.com/webpack-contrib/css-loader#object
@@ -16,11 +16,14 @@ module.exports = withAntdLess({
 
   // Other Config Here...
   target: "server",
-  distDir: '.next',
+  distDir: ".next",
   cleanDistDir: true,
-  output: !!process.env.NEXT_PRIVATE_STANDALONE ? 'standalone' : undefined,
+  // experimental: {
+  //   forceSwcTransforms: true,
+  // },
+  output: !!process.env.NEXT_PRIVATE_STANDALONE ? "standalone" : undefined,
   webpack(config) {
-    config.resolve.modules.push(path.resolve('./'))
+    config.resolve.modules.push(path.resolve("./"));
     return config;
   },
 

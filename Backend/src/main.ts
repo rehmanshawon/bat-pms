@@ -89,8 +89,8 @@ async function bootstrap() {
 
   //swagger for api documentation
   const config = new DocumentBuilder()
-    .setTitle('IFIC')
-    .setDescription('Banking ERP Application')
+    .setTitle('BAT PMS')
+    .setDescription('British American Tobacco Group Performance Management System')
     .setLicense('Apsis Solutions Ltd', 'https://apsissolutions.com/')
     .setVersion('1.0')
     .addBearerAuth(

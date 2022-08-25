@@ -40,7 +40,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  background: linear-gradient(180deg, #2a3267, #1e282f 100%);
+  background: linear-gradient(180deg, #4988af, #0487e4 100%);
 }
 
 .hero-body {

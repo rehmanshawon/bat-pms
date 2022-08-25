@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Dropdown, Button, Menu } from "antd";
 import { MoreOutlined } from "@ant-design/icons";
 
-import { MasterPDF } from "@/apsisEngine/common/pdf/MasterPDF";
+import { MasterPDF } from "apsisEngine/common/pdf/MasterPDF";
 import { CSVexport } from "../csv/csvExport";
 import { XLSXexport } from "../xlsx/masterXlsx";
 import { PrintMaster } from "../print/printMaster";

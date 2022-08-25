@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Cascader } from "antd";
 
 export const FormCascader = ({

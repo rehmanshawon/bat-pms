@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { renderToString } from "react-dom/server";
 import htmlToPdfmake from "html-to-pdfmake";
 import pdfMake from "pdfmake/build/pdfmake";

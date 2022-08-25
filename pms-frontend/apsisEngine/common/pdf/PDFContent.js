@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { filterColumn } from "@/apsisEngine/helpers/helpers";
+import { filterColumn } from "apsisEngine/helpers/helpers";
 export const PDFContent = ({ data }) => {
   //initial state
   const { master_grid_title, columns, items, is_serial } = data;
@@ -9,7 +9,11 @@ export const PDFContent = ({ data }) => {
       return (
         <Fragment>
           {columns.map((cl) => {
-            return filterColumn(cl.dataIndex, rowsItem[cl.dataIndex], cl.field_type);
+            return filterColumn(
+              cl.dataIndex,
+              rowsItem[cl.dataIndex],
+              cl.field_type
+            );
           })}
         </Fragment>
       );

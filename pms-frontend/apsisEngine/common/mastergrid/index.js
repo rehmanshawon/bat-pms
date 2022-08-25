@@ -9,11 +9,11 @@ import React, {
 
 import { Row, Col, Button, Input, Space, Table } from "antd";
 
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
-import SearchComponent from "@/apsisEngine/common/search";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
+import SearchComponent from "apsisEngine/common/search";
 import { SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
-import { columnShorter } from "@/apsisEngine/helpers/sorter";
+import { columnShorter } from "apsisEngine/helpers/sorter";
 import GridAction from "./gridAction";
 import {
   apsisDate,
@@ -21,7 +21,7 @@ import {
   apsisMoney,
   apsisQuantity,
   envProducer,
-} from "@/apsisEngine/helpers/helpers";
+} from "apsisEngine/helpers/helpers";
 import router from "next/router";
 import { swalError } from "../formValidations";
 
@@ -52,9 +52,10 @@ export const MasterGrid = React.forwardRef(
     },
     ref
   ) => {
+    MasterGrid.displayName = "MasterGrid";
     const isMounted = useRef(false);
     let searchInput = "";
-    const baseURL = envProducer('public');
+    const baseURL = envProducer("public");
     const [gridTitle, setGridTitle] = useState(title);
     const [columnState, setColumnState] = useState();
 
@@ -100,7 +101,7 @@ export const MasterGrid = React.forwardRef(
     const [exportPrinting, setExportPrinting] = useState(0);
 
     const [reviseButton, setReviseButton] = useState([]);
-    const [newExtra,setNewExtra] = useState(extra);
+    const [newExtra, setNewExtra] = useState(extra);
 
     //file Name generate
     const fileName =
@@ -124,7 +125,7 @@ export const MasterGrid = React.forwardRef(
           router.push({
             pathname: `/memo/create`,
             query: {
-              outSlug: e.target.getAttribute('attribute'),
+              outSlug: e.target.getAttribute("attribute"),
               outRefs: ids,
             },
           });
@@ -164,7 +165,7 @@ export const MasterGrid = React.forwardRef(
             enable_status: bt?.enable_status,
             disable_status: bt?.disable_status,
             enable_multiple: bt?.enable_multiple,
-            data_attribute:bt?.btn_data_attr
+            data_attribute: bt?.btn_data_attr,
           };
           button.push(btnItem);
         }
@@ -437,42 +438,43 @@ export const MasterGrid = React.forwardRef(
               if (column.link) {
                 return (
                   <>
-                  {value.link === 'view/' ? (
-                    <span
-                      style={{
-                        display: 'block',
-                        color: 'blue',
-                        textDecoration: 'underline',
-                        textAlign: column.text_align ?? 'left',
-                        cursor: 'pointer',
-                      }}
-                      onClick={() => {
-                        linkView(column, row);
-                      }}
-                    >
-                      {value.value}
-                    </span>
-                  ) : (
-                    <a
-                      style={{
-                        display: 'block',
-                        color: 'blue',
-                        textDecoration: 'underline',
-                        textAlign: column.text_align ?? 'left',
-                      }}
-                      href={
-                        value.link
-                          ? value.link.includes(`public/files`)
-                            ? `${baseURL}${value.link}`
-                            : value.link
-                          : '#'
-                      }
-                      target="_blank"
-                    >
-                      {value.value}
-                    </a>
-                  )}
-                </>
+                    {value.link === "view/" ? (
+                      <span
+                        style={{
+                          display: "block",
+                          color: "blue",
+                          textDecoration: "underline",
+                          textAlign: column.text_align ?? "left",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          linkView(column, row);
+                        }}
+                      >
+                        {value.value}
+                      </span>
+                    ) : (
+                      <a
+                        style={{
+                          display: "block",
+                          color: "blue",
+                          textDecoration: "underline",
+                          textAlign: column.text_align ?? "left",
+                        }}
+                        href={
+                          value.link
+                            ? value.link.includes(`public/files`)
+                              ? `${baseURL}${value.link}`
+                              : value.link
+                            : "#"
+                        }
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {value.value}
+                      </a>
+                    )}
+                  </>
                 );
               }
 
@@ -548,15 +550,15 @@ export const MasterGrid = React.forwardRef(
           });
 
           //when client side table store table data
-          if (client_side) {
-            const data = items.map((item) => {
-              return {
-                key: String(item[primary_key_field]),
-                ...item,
-              };
-            });
-            setGridData(data);
-          }
+          // if (client_side) {
+          //   const data = items.map((item) => {
+          //     return {
+          //       key: String(item[primary_key_field]),
+          //       ...item,
+          //     };
+          //   });
+          //   setGridData(data);
+          // }
           setSelectedIds([]);
           //set filtered column
           setColumnData(filteredColumn);
@@ -579,10 +581,10 @@ export const MasterGrid = React.forwardRef(
           search_data: searchState ?? [],
         })
         .then((res) => {
+          //console.log(res.result.items[0]);
           if (res.data && res.data.items) {
             //set response data
             const responseData = res.data.items;
-
             const data = responseData.map((item, index) => {
               return {
                 key: String(item[primaryKeyField]),
@@ -673,7 +675,7 @@ export const MasterGrid = React.forwardRef(
     };
 
     //selected ids
-    useEffect(async () => {
+    useEffect(() => {
       if (value && value.constructor === String) {
         setSelectedIds(value.split(","));
       } else if (value && value.constructor === Number) {
@@ -686,42 +688,53 @@ export const MasterGrid = React.forwardRef(
     }, [value]);
 
     //1. load initial column data and table data
-    useEffect(async () => {
-      if (slug) {
-        await fetchTitle();
-      }
-
+    useEffect(() => {
+      const getTitle = async () => {
+        if (slug) {
+          await fetchTitle();
+        }
+      };
+      getTitle();
       isMounted.current = true;
     }, [newExtra, slug]);
 
     //2. when master grid server side
-    useEffect(async () => {
-      if (
-        griData.length == 0 &&
-        primaryKeyField &&
-        !is_clientSide &&
-        !isMounted.current
-      ) {
-        await fetchData();
-      }
+    useEffect(() => {
+      const getData = async () => {
+        if (
+          griData.length == 0 &&
+          primaryKeyField &&
+          !is_clientSide &&
+          !isMounted.current
+        ) {
+          await fetchData();
+        }
+      };
+      getData();
     }, [primaryKeyField, is_serial]);
 
     // when Checked and unchecked
-    useEffect(async () => {
-      if (isMounted.current) {
-        await fetchTitle();
-      }
+    useEffect(() => {
+      const getTitle = async () => {
+        if (isMounted.current) {
+          await fetchTitle();
+        }
+      };
+      getTitle();
     }, [inputState, searchState]);
 
     //3. when Checked and unchecked, common search, pagination
-    useEffect(async () => {
-      if (isMounted.current && slug) {
-        await fetchData();
-      }
+    useEffect(() => {
+      const getData = async () => {
+        if (isMounted.current && slug) {
+          await fetchData();
+        }
+      };
+      getData();
     }, [inputState, searchState, is_serial, perPage, currentPage]);
 
     //Data Filer
-    useEffect(async () => {
+    useEffect(() => {
       setSourceData(generateSerial(griData, currentPage, perPage));
     }, [griData]);
 
@@ -732,7 +745,7 @@ export const MasterGrid = React.forwardRef(
 
     useEffect(() => {
       const buttonList = [...buttons, ...(extraButtons ?? [])];
-      
+
       if (disableButtons && disableButtons.length > 0) {
         const newButtonList = buttonList.filter(
           (button) => !disableButtons.includes(button.id)
@@ -743,7 +756,6 @@ export const MasterGrid = React.forwardRef(
       }
     }, [disableButtons, buttons, extraButtons]);
 
-    
     return (
       <Fragment>
         <div className="master_grid">
@@ -806,11 +818,13 @@ export const MasterGrid = React.forwardRef(
           {columnData && columnData.length > 0 && (
             <Table
               className={`grid-table ${!is_selectable ? "disable_select" : ""}`}
-              rowSelection={ is_selectable && {
-                type: selectionType,
-                selectedRowKeys: selectedIds,
-                ...rowSelection,
-              }}
+              rowSelection={
+                is_selectable && {
+                  type: selectionType,
+                  selectedRowKeys: selectedIds,
+                  ...rowSelection,
+                }
+              }
               columns={columnData}
               dataSource={sourceData}
               onChange={handleChange}
@@ -826,9 +840,11 @@ export const MasterGrid = React.forwardRef(
               }
               {...rest}
               footer={footer ? () => footer : null}
-              scroll={sourceData.length > 6 && {
-                      x: true,
-                    }}
+              scroll={
+                sourceData.length > 6 && {
+                  x: true,
+                }
+              }
             />
           )}
         </div>

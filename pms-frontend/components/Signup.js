@@ -1,9 +1,15 @@
-import { Button, Form, Input, Message, Row, Tooltip } from 'antd';
-import { EyeTwoTone, MailTwoTone, PlaySquareTwoTone, QuestionCircleTwoTone, SkinTwoTone } from '@ant-design/icons';
+import { Button, Form, Input, Message, Row, Tooltip } from "antd";
+import {
+  EyeTwoTone,
+  MailTwoTone,
+  PlaySquareTwoTone,
+  QuestionCircleTwoTone,
+  SkinTwoTone,
+} from "@ant-design/icons";
 
-import Link from 'next/link';
-import Router from 'next/router';
-import styled from 'styled-components';
+import Link from "next/link";
+import Router from "next/router";
+import styled from "styled-components";
 
 const FormItem = Form.Item;
 
@@ -13,19 +19,19 @@ const Content = styled.div`
   min-width: 300px;
 `;
 
-const Signup = ({ form }) => (
+const Signup = ({ ref, onFinish }) => (
   <Row
     type="flex"
     align="middle"
     justify="center"
     className="px-3 bg-white"
-    style={{ minHeight: '100vh' }}
+    style={{ minHeight: "100vh" }}
   >
     <Content>
       <div className="text-center mb-5">
         <Link href="/signup">
           <a className="brand mr-0">
-            <PlaySquareTwoTone style={{fontSize: '32px'}} />
+            <PlaySquareTwoTone style={{ fontSize: "32px" }} />
           </a>
         </Link>
         <h5 className="mb-0 mt-3">Sign up</h5>
@@ -35,25 +41,29 @@ const Signup = ({ form }) => (
 
       <Form
         layout="vertical"
-        onSubmit={e => {
-          e.preventDefault();
-          form.validateFields((err, values) => {
-            if (!err) {
-              Message.success('Account created. Please check your inbox!').then(
-                () => Router.push('/signin')
-              ).catch(error => {
-                console.log(error);
-              });;
-            }
-          });
-        }}
+        form={ref}
+        name="register"
+        onFinish={onFinish}
+        scrollToFirstError
+        // onSubmit={(e) => {
+        //   e.preventDefault();
+        //   form.validateFields((err, values) => {
+        //     if (!err) {
+        //       Message.success("Account created. Please check your inbox!")
+        //         .then(() => Router.push("/signin"))
+        //         .catch((error) => {
+        //           console.log(error);
+        //         });
+        //     }
+        //   });
+        // }}
       >
         <FormItem
           label={
             <span>
               Nickname&nbsp;
               <Tooltip title="What do you want others to call you?">
-                <QuestionCircleTwoTone style={{fontSize: '16px'}} />
+                <QuestionCircleTwoTone style={{ fontSize: "16px" }} />
               </Tooltip>
             </span>
           }
@@ -61,70 +71,71 @@ const Signup = ({ form }) => (
           rules={[
             {
               required: true,
-              message: 'Please input your nickname!',
-              whitespace: true
-            }
+              message: "Please input your nickname!",
+              whitespace: true,
+            },
           ]}
         >
           <Input
-            prefix={
-              <SkinTwoTone style={{fontSize: '16px'}} />
-            }
+            prefix={<SkinTwoTone style={{ fontSize: "16px" }} />}
             placeholder="Nickname"
           />
         </FormItem>
 
-        <FormItem label="Email" name="email" rules={[
-              {
-                type: 'email',
-                message: 'The input is not valid E-mail!'
-              },
-              {
-                required: true,
-                message: 'Please input your E-mail!'
-              }
-            ]}>
+        <FormItem
+          label="Email"
+          name="email"
+          rules={[
+            {
+              type: "email",
+              message: "The input is not valid E-mail!",
+            },
+            {
+              required: true,
+              message: "Please input your E-mail!",
+            },
+          ]}
+        >
           <Input
-            prefix={
-              <MailTwoTone style={{fontSize: '16px'}} />
-            }
+            prefix={<MailTwoTone style={{ fontSize: "16px" }} />}
             type="email"
             placeholder="Email"
           />
         </FormItem>
 
-        <FormItem label="Password" name="password" rules={[{ required: true, message: 'Please input your Password!' }]}>
-          <Input
-            prefix={
-              <EyeTwoTone style={{fontSize: '16px'}} />
-            }
-            type="password"
-            placeholder="Password"
-          />
+        <FormItem
+          label="Password"
+          name="password"
+          rules={[{ required: true, message: "Please input your Password!" }]}
+          hasFeedback
+        >
+          <Input.Password />
         </FormItem>
 
-        <FormItem label="Confirm password" name="confirm" rules={[
-              {
-                required: true,
-                message: 'Please confirm your password!'
-              },
-              {
-                validator: (rule, value, callback) => {
-                  if (value && value !== form.getFieldValue('password')) {
-                    callback("Passwords don't match!");
-                  } else {
-                    callback();
-                  }
+        <FormItem
+          label="Confirm password"
+          name="confirm"
+          rules={[
+            {
+              required: true,
+              message: "Please confirm your password!",
+            },
+
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue("password") === value) {
+                  return Promise.resolve();
                 }
-              }
-            ]}>
-          <Input
-            prefix={
-              <EyeTwoTone style={{fontSize: '16px'}} />
-            }
-            type="password"
-            placeholder="Confirm password"
-          />
+
+                return Promise.reject(
+                  new Error("The two passwords that you entered do not match!")
+                );
+              },
+            }),
+          ]}
+          hasFeedback
+        >
+          <Input.Password />
         </FormItem>
 
         <FormItem>
@@ -135,7 +146,7 @@ const Signup = ({ form }) => (
 
         <div className="text-center">
           <small className="text-muted">
-            <span>Already have an account?</span>{' '}
+            <span>Already have an account?</span>{" "}
             <Link href="/signin">
               <a>&nbsp;Login Now!</a>
             </Link>

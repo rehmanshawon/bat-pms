@@ -6,8 +6,8 @@ import React, {
   useEffect,
 } from "react";
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
-import { filterColumn } from "@/apsisEngine/helpers/helpers";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import { filterColumn } from "apsisEngine/helpers/helpers";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Button } from "antd";
 
 const ComponentToPrint = forwardRef(

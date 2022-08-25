@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Select } from "antd";
 
 export const FormTags = ({
@@ -17,9 +17,8 @@ export const FormTags = ({
   const [loading, setLoading] = useState(false);
   const [selectedValue, setSelectedValue] = useState(value);
 
-
   function handleChange(value) {
-    console.log(value)
+    console.log(value);
     //set selected item
     setSelectedValue(value);
 

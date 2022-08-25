@@ -43,7 +43,7 @@ instance.interceptors.response.use(
 
     // Logout user if token refresh didn't work or user is disabled
     if (
-      error.config.url == "auth/refreshtoken" ||
+      error.config.url == "apsis/auth/refreshtoken" ||
       error.response.message == "Account is disabled."
     ) {
       //force logout
@@ -56,7 +56,7 @@ instance.interceptors.response.use(
     // Try request again with new token
     if (
       error.response.status == 401 &&
-      error.config.url != "auth/refreshtoken"
+      error.config.url != "apsis/auth/refreshtoken"
     ) {
       return getNewToken()
         .then((access_token) => {

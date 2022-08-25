@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "antd";
 import { CSVLink, CSVDownload } from "react-csv";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 export const CSVexport = ({
   slug,
   extra,

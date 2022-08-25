@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Button } from "antd";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import {
   swalConfirm,
   swalSuccess,
   swalError,
-} from "@/apsisEngine/helpers/helperService";
+} from "apsisEngine/helpers/helperService";
 export const XLSXexport = ({ slug, extra, inputState, searchState }) => {
   const [loading, setLoading] = useState(false);
 

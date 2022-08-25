@@ -1,7 +1,5 @@
-
 .sutonny {
-  
-  color: red!important;
+  color: red !important;
 }
 .layout-demo .row {
   margin-bottom: 0.5rem;
@@ -344,8 +342,8 @@ button:focus-visible,
   display: none \9;
   width: 100%;
   height: 100%;
-  background: #dbdbdb;
-  opacity: 0.7;
+  background: #096bff;
+  opacity: 1;
   transition: all 0.3s;
   content: "";
   pointer-events: none;
@@ -360,7 +358,7 @@ button:focus-visible,
   position: relative;
   z-index: 100;
   max-width: 500px;
-  background: rgb(227 227 227 / 60%);
+  background: rgba(5, 148, 251, 0.927);
   -webkit-box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.06);
   box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.06);
   border-radius: 5px;
@@ -630,7 +628,6 @@ button * {
   background: #555;
 }
 
-
 /* width */
 .route-plangrid .route-grid::-webkit-scrollbar {
   width: 7px;
@@ -659,7 +656,6 @@ button * {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 
 .route-plangrid > div.route-grid:nth-child(2) {
   width: 83%;
@@ -701,7 +697,7 @@ button * {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media   (min-width: 1450px) and (max-width: 1536px) {
+@media (min-width: 1450px) and (max-width: 1536px) {
   .route-plangrid > div.route-grid:nth-child(2) {
     width: 81%;
   }
@@ -710,7 +706,7 @@ button * {
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media   (min-width: 1200px) and (max-width: 1449px) {
+@media (min-width: 1200px) and (max-width: 1449px) {
   .route-plangrid > div.route-grid:nth-child(2) {
     width: 78%;
   }

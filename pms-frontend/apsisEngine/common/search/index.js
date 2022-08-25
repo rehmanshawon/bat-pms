@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { MultiSelect } from "react-multi-select-component";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Form, Row, Button } from "antd";
-import { FormItem } from "@/apsisEngine/common/formValidations";
+import { FormItem } from "apsisEngine/common/formValidations";
 
-import "@/apsisEngine/common/search/search.module.less";
+import "apsisEngine/common/search/search.module.less";
 
 const SearchComponent = ({
   slug,

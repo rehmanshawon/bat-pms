@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { MultiSelect } from "react-multi-select-component";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 export const FormMultiSelect = ({
   value,
   onChange,
@@ -71,7 +71,7 @@ export const FormMultiSelect = ({
     return () => {
       setSelected([]);
     };
-  }, [extra, dropdownOptions,value]);
+  }, [extra, dropdownOptions, value]);
 
   return (
     <Fragment>
