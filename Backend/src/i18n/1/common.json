@@ -1,0 +1,7 @@
+{   
+    "table_data_found": "Pointer data found",
+    "table_data_not_found": " table data not found!!",
+
+    "status_not_found": "Provided slug not valid!!!!",
+    "invalid_status" : "Not in draft"
+}

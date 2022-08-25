@@ -1,0 +1,11 @@
+{
+    "pageName": {
+        "title": "Test Alert Message Practical Use",
+        "section_name": {
+            "sec_1": "Product Name",
+            "sec_2": "Product Brand"
+        },
+        "error_message": "{data} Not Found!!!!!!!!",
+        "successful_message": "Successfully {data} Found!!!!!!!!"
+    }
+}

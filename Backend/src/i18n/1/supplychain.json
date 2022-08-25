@@ -1,0 +1,10 @@
+{
+    "sc_complains_create": "{code} Successfully Created!!",
+    "sc_complains_create_error": "Error Found!!!! {code} table data not insert",
+    "sc_complains_get": "Successfull retrieve {code} Data!!!",
+    "sc_complains_get_error": "Error Found!!!! {code} table data not found!",
+    "sc_complains_update": "Successfull Update {code} Data!!!",
+    "sc_complains_update_error": "Error Found!!!! {code} table data not update!",
+    "sc_complains_delete": "Successfull deleted {code} Data!!!",
+    "sc_complains_delete_error": "Error Found!!!! {code} table data not deleted!"
+  }

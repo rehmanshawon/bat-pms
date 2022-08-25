@@ -1,0 +1,1 @@
+export { FeatureImg } from "./featureImg";

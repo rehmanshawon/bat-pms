@@ -1,0 +1,748 @@
+@import "../public/nprogress.css";
+@import "../public/css/font-awesome.css";
+@import "../public/css/bootstrap.min.css";
+@import "../public/css/grid-layout.css";
+@import "../public/css/FileUpload.css";
+@import "../public/css/react-datepicker.css";
+@import "../public/css/treetable.css";
+@import "../public/css/codemirror.css";
+@import "../public/react-vis.css";
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: rgb(2, 99, 255);
+  }
+}
+
+.sutonny {
+  color: red !important;
+}
+.layout-demo .row {
+  margin-bottom: 0.5rem;
+}
+.layout-demo .col {
+  background-color: #e9ecef;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+.layout-demo [class*="col-"] {
+  background-color: #e9ecef;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+.button-demo .btn {
+  min-width: 7rem;
+}
+button:focus,
+button:focus-visible,
+.btn:focus,
+.btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.ant-picker-ranges .ant-picker-preset > .ant-tag-blue {
+  color: #fff !important;
+  background: rgb(0, 98, 255) !important;
+  border-color: rgb(2, 116, 255) !important;
+}
+.ant-table {
+  color: rgb(5, 126, 255) !important;
+}
+.ant-layout-header .ant-menu-horizontal {
+  border-bottom: 1px solid #359bfaa1 !important;
+}
+
+.ant-layout-header.header_light .ant-menu-horizontal {
+  border-bottom: 1px solid #359bfaa1 !important;
+}
+.ant-layout-sider-children {
+  background: #fff;
+  overflow: hidden;
+  flex: 1 1 auto;
+  flex-direction: column;
+  display: flex;
+}
+[id^="components-button-demo"] div:not(.ant-btn-group) > .ant-btn,
+[id^="components-button-demo"] span:not(.ant-btn-group) > .ant-btn,
+[id^="components-button-demo"] .ant-btn-group {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+
+[id^="components-button-demo"] p {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+[id^="components-icon-demo"] .icons-list > .anticon {
+  margin-right: 6px;
+  font-size: 24px;
+}
+
+[id^="components-affix-demo"] .scrollable-container {
+  height: 100px;
+  overflow-y: scroll;
+}
+[id^="components-affix-demo"] .background {
+  padding-top: 60px;
+  height: 300px;
+  background-image: url("https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg");
+}
+[id^="components-pagination-demo"] .ant-pagination:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+[id^="components-form-demo-advanced-search"] .ant-form {
+  max-width: none;
+}
+[id^="components-form-demo-advanced-search"] .search-result-list {
+  margin-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 6px;
+  background-color: #fafafa;
+  min-height: 200px;
+  text-align: center;
+  padding-top: 80px;
+}
+[id^="components-form-demo-global-state"] .language-bash {
+  max-width: 400px;
+  border-radius: 6px;
+  margin-top: 24px;
+}
+
+[id^="components-switch-demo"] .ant-switch {
+  margin-bottom: 8px;
+}
+
+[id^="components-slider-demo"] h4 {
+  margin: 0 0 16px;
+}
+[id^="components-slider-demo"] .ant-slider-with-marks {
+  margin-bottom: 44px;
+}
+[id^="components-avatar-demo-basic"] .ant-avatar {
+  margin-bottom: 16px;
+  margin-right: 16px;
+}
+[id^="components-badge-demo"] .ant-badge:not(.ant-badge-not-a-wrapper) {
+  margin-right: 20px;
+}
+[id^="components-badge-demo"] .anticon-notification {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
+}
+[id^="components-badge-demo"] .ant-badge-not-a-wrapper:not(.ant-badge-status) {
+  margin-right: 8px;
+}
+.head-example {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  background: #eee;
+  display: inline-block;
+  vertical-align: middle;
+}
+[id^="components-popover-demo-placement"] .ant-btn {
+  width: 70px;
+  text-align: center;
+  padding: 0;
+}
+[id^="components-tooltip-demo-placement"] .ant-btn {
+  width: 70px;
+  text-align: center;
+  padding: 0;
+}
+[id^="components-tabs-demo-card-to"] .code-box-demo {
+  background: #f5f5f5;
+  overflow: hidden;
+  padding: 24px;
+}
+.components-table-demo-control-bar {
+  margin-bottom: 10px;
+}
+.components-table-demo-control-bar .ant-form-item {
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+[id^="components-message-demo-other"] .ant-btn {
+  margin-right: 8px;
+}
+[id^="components-progress-demo"] .ant-progress-circle-wrap,
+[id^="components-progress-demo"] .ant-progress-line-wrap {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+[id^="components-popconfirm-demo-placement"] .ant-btn {
+  width: 70px;
+  text-align: center;
+  padding: 0;
+}
+
+[id^="components-alert-demo"] .ant-alert {
+  margin-bottom: 16px;
+}
+
+[id^="components-badge-demo"] .ant-badge:not(.ant-badge-not-a-wrapper) {
+  margin-right: 20px;
+}
+[id^="components-badge-demo"] .head-example {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  background: #e6e6e6;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+[id^="components-carousel-demo"] .ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+[id^="components-carousel-demo"] .ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+[id^="components-progress-demo"] .ant-progress-circle-wrap,
+[id^="components-progress-demo"] .ant-progress-line-wrap,
+[id^="components-progress-demo"] .ant-progress-circle {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+[id^="components-datepicker-demo"] .ant-calendar-picker,
+[id^="components-timepicker-demo"] .ant-time-picker,
+[id^="components-input-demo"] .ant-input-number,
+[id^="components-input-demo"] .ant-select {
+  margin-bottom: 16px;
+  margin-right: 16px;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: inherit !important;
+}
+
+/* SEARCH PANEL STYLES */
+
+.search_panel_wrap {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.search_panel_wrap.active {
+  max-height: 1000px;
+  overflow: visible;
+}
+.search_panel_wrap .main {
+  padding-bottom: 1rem;
+  display: block;
+}
+.search_panel_wrap .u_line {
+  border-top: 1px solid #ddd;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+.search_panel_wrap .inputForm {
+  font-weight: 700;
+}
+.search_panel_wrap .field_selection {
+  position: relative;
+}
+.search_panel_wrap .field_selection .options_label {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 14px;
+}
+.search_panel_wrap .field_selection .dropdown-container,
+.search_panel_wrap .field_selection .dropdown-container:active,
+.search_panel_wrap .field_selection .dropdown-container:focus,
+.search_panel_wrap .field_selection .dropdown-container:focus-within,
+.search_panel_wrap .field_selection .dropdown-container:focus-visible {
+  border: none;
+  border-bottom: 1px solid #3699ff !important;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+.search_panel_wrap .field_selection .dropdown-heading {
+  padding-left: 170px;
+}
+.logo-sub {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 40px;
+  letter-spacing: 5px;
+  padding-top: 5px;
+}
+
+.ant-menu,
+.ant-table table {
+  font-size: 12px !important;
+}
+
+.rmsc {
+  --rmsc-main: #4285f4;
+  --rmsc-hover: #f1f3f5;
+  --rmsc-selected: #e2e6ea;
+  --rmsc-border: #d9d9d9;
+  --rmsc-gray: #aaa;
+  --rmsc-bg: #fff;
+  --rmsc-p: 10px;
+  --rmsc-radius: 3px !important;
+  --rmsc-h: 30px !important;
+}
+
+.dropdown_grid_level {
+  display: block;
+  min-height: 32px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.dropdown_grid_level.no-selected {
+  color: #999;
+}
+.search-filter {
+  display: inline-block;
+  text-align: right;
+  max-width: 600px;
+  position: relative;
+  /* float: right; */
+}
+.search-filter .icon {
+  position: absolute;
+  right: 7px;
+  top: 4px;
+}
+
+.selected-items h2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.login-area {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: url(/images/bg1.jpg) center center no-repeat fixed;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+.login-area::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none \9;
+  width: 100%;
+  height: 100%;
+  background: #096bff;
+  opacity: 1;
+  transition: all 0.3s;
+  content: "";
+  pointer-events: none;
+}
+
+.LoginSection {
+  padding: 30px 60px;
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  max-width: 500px;
+  background: rgba(5, 148, 251, 0.927);
+  -webkit-box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+}
+.logoSection {
+  display: block;
+  margin-bottom: 20px;
+}
+.LoginSection .ant-form-item-control-input,
+.LoginSection .ant-input-affix-wrapper {
+  border-radius: 5px;
+  line-height: 1.7;
+  min-height: 40px;
+}
+.LoginSection .ant-input-affix-wrapper > input.ant-input {
+  padding-left: 10px;
+}
+.LoginSection svg {
+  filter: grayscale(80%);
+}
+.logo-header {
+  display: block;
+}
+.login-img {
+  display: inline-block;
+  max-width: 70%;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+.login-title {
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+.login-sub {
+  margin-bottom: 30px;
+}
+
+.approval-card .ant-card-head,
+.approval-card .ant-card-body {
+  border: 1px solid rgba(49, 45, 45, 0.1);
+}
+
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: 100%;
+}
+li.ant-menu-item.ant-menu-item-only-child.companyLogo {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 220px;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  min-height: 65px;
+}
+li.ant-menu-item.ant-menu-item-only-child.companyLogo.dark {
+  background: #0f1222;
+}
+li.ant-menu-item.ant-menu-item-only-child.companyLogo.light {
+  background: #dfdfdf;
+  border-right: 2px solid #dfdfdf;
+}
+
+.searchHandler.ant-select-multiple .ant-select-selection-item {
+  background: transparent;
+  border: none;
+}
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #01893f;
+}
+::selection {
+  color: #fff;
+  background: #00793f;
+}
+
+.ant-layout-sider.bg-dark,
+li.ant-menu-item.ant-menu-item-only-child.companyLogo.dark {
+  border-right: 1px solid #cbcbcba1 !important;
+}
+.ant-layout-sider.bg-light {
+  border-right: 1px solid #dfdfdf !important;
+}
+
+/* .ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #00863d;
+}
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover {
+  background-color: #00863d;
+} */
+/* .ant-layout-content {
+  overflow: auto;
+} */
+
+.apsisCard {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f,
+    0 5px 12px 4px #00000017 !important;
+  color: "#000" !important;
+  border-radius: 4px;
+}
+
+.ant-card {
+  color: #000 !important;
+}
+
+.delegationTable table th {
+  background-color: #1e1e2d !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+
+.editable-cell {
+  position: relative;
+}
+
+.editable-row .editable-cell-value-wrap {
+  border: 1px solid #888;
+  border-radius: 2px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.smallTable .ant-table-title {
+  padding: 0px;
+  text-align: right;
+}
+
+.smallTable .ant-table-container,
+.smallTable .ant-table-content {
+  padding: 0px !important;
+  border: none;
+}
+
+.deleteButton {
+  background-color: #ff5252 !important;
+  border-radius: 5px !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: auto !important;
+}
+
+.deleteButton:hover {
+  background-color: #ff5252 !important;
+  border-color: #fff !important;
+}
+
+.deleteButton:hover .fa-trash {
+  color: #333 !important;
+}
+.bg-b {
+  background: #f0f0f0;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+button * {
+  pointer-events: none;
+}
+
+.text-green {
+  color: #00bf57;
+}
+
+.bg-green {
+  background-color: #00bf57;
+}
+
+.bgRed {
+  background-color: #c00000;
+  color: #fff;
+}
+
+.bgGreen {
+  background-color: #92d050;
+}
+
+.bgYellow {
+  background-color: #ffd800;
+}
+
+.custom-tbl tr th {
+  background: #414141 !important;
+  color: #fff !important;
+}
+.custom-tbl tr th label {
+  color: #fff !important;
+}
+.tbl-even {
+  background-color: #f4f4f4;
+}
+.tbl-odd {
+  background-color: #e4e4e4;
+}
+.maniestTbl table thead tr th {
+  padding: 7px 7px !important;
+}
+.maniestTbl table tbody tr td {
+  padding: 7px 7px !important;
+}
+
+.full-workspace {
+  top: 3rem !important;
+}
+
+/* width */
+.full-workspace div::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.full-workspace div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.full-workspace div::-webkit-scrollbar-thumb {
+  background: #cacaca;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.full-workspace div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.custom-header table thead tr th {
+  background-color: #1e1e2d !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+
+/*custom CIT Route Scroll Bar*/
+
+/* width */
+.route-plangrid .route-grid div::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.route-plangrid .route-grid div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.route-plangrid .route-grid div::-webkit-scrollbar-thumb {
+  background: #cacaca;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.route-plangrid .route-grid div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* width */
+.route-plangrid .route-grid::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.route-plangrid .route-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.route-plangrid .route-grid::-webkit-scrollbar-thumb {
+  background: #cacaca;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.route-plangrid .route-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Route Plan Grid CSS*/
+
+.route-plangrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.route-plangrid > div.route-grid:nth-child(2) {
+  width: 83%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 700px;
+  overflow-y: auto;
+}
+.route-plangrid > div.route-grid {
+  height: 200px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .route-plangrid > div.route-grid:nth-child(2) {
+    width: 53%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .route-plangrid > div.route-grid:nth-child(2) {
+    width: 63%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .route-plangrid > div.route-grid:nth-child(2) {
+    width: 73%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .route-plangrid > div.route-grid:nth-child(2) {
+    width: 83%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1450px) and (max-width: 1536px) {
+  .route-plangrid > div.route-grid:nth-child(2) {
+    width: 81%;
+  }
+  .route-plangrid > div.route-grid:nth-child(1) {
+    width: 19%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1449px) {
+  .route-plangrid > div.route-grid:nth-child(2) {
+    width: 78%;
+  }
+  .route-plangrid > div.route-grid:nth-child(1) {
+    width: 19%;
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "vat_service_create": "{code} Successfully Created!!",
+  "vat_service_create_error": "Error Found! {code} table data not insert",
+  "vat_service_get": "Successfull retrieve {code} Data!",
+  "vat_service_get_error": "Error Found! {code} table data not found!",
+  "vat_service_update": "Successfull Update {code} Data!",
+  "vat_service_update_error": "Error Found! {code} table data not update!",
+  "vat_service_delete": "Successfull deleted {code} Data!",
+  "vat_service_delete_error": "Error Found! {code} table data not Deleted!",
+
+  "tax_service_create": "{code} Successfully Created!!",
+  "tax_service_create_error": "Error Found! {code} table data not insert",
+  "tax_service_get": "Successfull retrieve {code} Data!",
+  "tax_service_get_error": "Error Found! {code} table data not found!",
+  "tax_service_update": "Successfull Update {code} Data!",
+  "tax_service_update_error": "Error Found! {code} table data not update!",
+  "tax_service_delete": "Successfull deleted {code} Data!",
+  "tax_service_delete_error": "Error Found! {code} table data not Deleted!",
+
+  "challan_create": "{code} Successfully Created!!",
+  "challan_create_error": "Error Found! {code} table data not insert",
+  "challan_get": "Successfull retrieve {code} Data!",
+  "challan_get_error": "Error Found! {code} table data not found!",
+  "challan_update": "Successfull Update {code} Data!",
+  "challan_update_error": "Error Found! {code} table data not update!",
+  "challan_delete": "Successfull deleted {code} Data!",
+  "challan_delete_error": "Error Found! {code} table data not Deleted!",
+   
+  "challan_label": {
+    "challan_number": "Challan Number",
+    "challan_month": "Challan Month",
+    "deposit_date": "Deposit Date",
+    "challan_for": "Challan For",
+    "deposit_type": "Deposit Type",
+    "deposit_by": "Deposit By",
+    "deposit_amount": "Deposit Amount",
+    "deposit_bank": "Deposit Bank",
+    "deposit_branch": "Deposit Branch"
+  },
+
+  "tax_label": {
+    "tax_service_code": "Code",
+    "tax_type": "Type",
+    "tax_head": "Head",
+    "tax_section": "Section",
+    "tax_head_description": "Description",
+    "applicable_date": "Applicable date",
+    "tax_min_slab_amount": "Tax min slab amount",
+    "tax_max_slab_amount": "Tax max Slab amount",
+    "tax_ratio_with_tin": "Tax Rate With TIN (%)",
+    "tax_ratio_without_tin": "Tax Rate Without TIN (%)",
+    "commission_rate_with_tin": "Commission Rate with TIN (%)",
+    "commission_rate_without_tin": "Commission Rate without TIN (%)",
+    "gross_rate_with_tin": "Gross Rate with TIN (%)",
+    "gross_rate_without_tin": "Gross Rate without TIN (%)"
+    
+  }, 
+  "rms_vat_changes_create": "{code} Successfully Created!!",
+  "rms_vat_changes_create_error": "Error Found!!!! {code} table data not insert",
+  "rms_vat_changes_get": "Successfull retrieve {code} Data!!!",
+  "rms_vat_changes_get_error": "Error Found!!!! {code} table data not found!",
+  "rms_vat_changes_update": "Successfull Update {code} Data!!!",
+  "rms_vat_changes_update_error": "Error Found!!!! {code} table data not update!",
+  "rms_vat_changes_delete": "Successfull deleted {code} Data!!!",
+  "rms_vat_changes_delete_error": "Error Found!!!! {code} table data not Deleted!"
+  }

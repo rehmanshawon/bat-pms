@@ -1,0 +1,284 @@
+.search_panel_wrap {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.search_panel_wrap.active {
+  max-height: 1000px;
+  overflow: visible;
+}
+.search_panel_wrap .main {
+  padding-bottom: 1rem;
+  display: block;
+}
+.search_panel_wrap .u_line {
+  border-top: 1px solid #ddd;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+.search_panel_wrap .inputForm {
+  font-weight: 700;
+}
+.search_panel_wrap .field_selection {
+  position: relative;
+}
+.search_panel_wrap .field_selection .options_label {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 14px;
+}
+.search_panel_wrap .field_selection .dropdown-container,
+.search_panel_wrap .field_selection .dropdown-container:active,
+.search_panel_wrap .field_selection .dropdown-container:focus,
+.search_panel_wrap .field_selection .dropdown-container:focus-within,
+.search_panel_wrap .field_selection .dropdown-container:focus-visible {
+  border: none;
+  border-bottom: 1px solid #3699ff !important;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+.search_panel_wrap .field_selection .dropdown-heading {
+  padding-left: 170px;
+}
+.logo-sub {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 40px;
+  letter-spacing: 5px;
+  padding-top: 5px;
+}
+
+.ant-menu,
+.ant-table table {
+  font-size: 12px !important;
+}
+
+/* .absolute-button {
+  position: absolute;
+
+  right: 0px;
+} */
+.section-title {
+  font-weight: 700;
+}
+
+.btn-sm {
+  padding: 7px 10px;
+  font-size: 13px;
+  line-height: 1;
+}
+.ant-menu-submenu-title i,
+.ant-menu-item i {
+  margin-right: 10px;
+}
+
+.action-btn {
+  line-height: 0;
+  font-size: 13px;
+  padding: 4px 5px;
+  position: relative;
+}
+
+.action-buttons button:before {
+  background: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  content: "";
+}
+
+/* .selection-wrapper {
+  float: right;
+  max-width: 90%;
+  text-align: right;
+  display: flex;
+  min-width: 200px;
+  position: relative;
+}
+
+.selection_label {
+  position: absolute;
+  left: -120px;
+  top: 2px;
+}
+
+.selection-wrapper .ant-select-multiple .ant-select-selector {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1px 4px;
+  justify-content: flex-end;
+}
+ */
+.dropdown_grid_level {
+  display: block;
+  min-height: 38px;
+}
+.dropdown_grid_level.no-selected {
+  color: #999;
+}
+.search-filter {
+  display: inline-block;
+  text-align: right;
+  max-width: 600px;
+  position: relative;
+  float: right;
+}
+.search-filter .icon {
+  position: absolute;
+  right: 7px;
+  top: 4px;
+}
+
+.gridSearch {
+  width: 50%;
+}
+
+.gridTitle {
+  width: fit-content;
+}
+
+.btn_filter {
+  width: 5rem;
+  padding: 5px;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.selected-items h2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.login-area {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: url(/images/bg1.jpg) center center no-repeat fixed;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+.login-area::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none \9;
+  width: 100%;
+  height: 100%;
+  background: #dbdbdb;
+  opacity: 0.7;
+  transition: all 0.3s;
+  content: "";
+  pointer-events: none;
+}
+
+.LoginSection {
+  padding: 30px 60px;
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  max-width: 500px;
+  background: rgb(227 227 227 / 50%);
+  -webkit-box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.06);
+}
+.logoSection {
+  display: block;
+  margin-bottom: 20px;
+}
+.LoginSection .ant-form-item-control-input,
+.LoginSection .ant-input-affix-wrapper {
+  border-radius: 5px;
+  line-height: 1.7;
+  min-height: 40px;
+}
+.LoginSection .ant-input-affix-wrapper > input.ant-input {
+  padding-left: 10px;
+}
+.LoginSection svg {
+  filter: grayscale(80%);
+}
+.logo-header {
+  display: block;
+}
+.login-img {
+  display: inline-block;
+  max-width: 70%;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+.login-title {
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+.login-sub {
+  margin-bottom: 30px;
+}
+
+.approval-card .ant-card-head,
+.approval-card .ant-card-body {
+  border: 1px solid rgba(49, 45, 45, 0.1);
+}
+
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: 100%;
+}
+li.ant-menu-item.ant-menu-item-only-child.companyLogo {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 220px;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  min-height: 65px;
+}
+li.ant-menu-item.ant-menu-item-only-child.companyLogo.dark {
+  background: #0f1222;
+}
+
+.searchHandler {
+  float: right;
+  width: 10%;
+}
+.dropdown-grid .searchHandler {
+  position: absolute;
+  right: 50px;
+  top: 14px;
+  width: 188px;
+}
+.searchHandler .ant-select-selector {
+  border-radius: 25px !important;
+  background: #e5e5e5 !important;
+}
+.searchHandler.ant-select-multiple .ant-select-selection-item {
+  background: transparent;
+  border: none;
+}

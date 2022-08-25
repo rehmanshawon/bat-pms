@@ -1,0 +1,34 @@
+{
+  "memo_configurations_create": "{code} Successfully Created!!",
+  "memo_configurations_create_error": "Error Found!!!! {code} table data not insert",
+  "memo_configurations_get": "Successfull retrieve {code} Data!!!",
+  "memo_configurations_get_error": "Error Found!!!! {code} table data not found!",
+  "memo_configurations_update": "Successfull Update {code} Data!!!",
+  "memo_configurations_update_error": "Error Found!!!! {code} table data not update!",
+  "memo_configurations_delete": "Successfull deleted {code} Data!!!",
+  "memo_configurations_delete_error": "Error Found!!!! {code} table data not Deleted!",
+  "memo_conf_approval_step_create": "{code} Successfully Created!!",
+  "memo_conf_approval_step_create_error": "Error Found!!!! {code} table data not insert",
+  "memo_conf_approval_step_get": "Successfull retrieve {code} Data!!!",
+  "memo_conf_approval_step_get_error": "Error Found!!!! {code} table data not found!",
+  "memo_conf_approval_step_confirm": "Successfull Confirmed {code}!!!",
+  "memo_conf_approval_step_confirm_error": "Error Found!!!! {code} Confirm!",
+
+  "memo_basic": {
+    "memo_code": "Memo Code",
+    "memo_type": "Memo Type",
+    "memo_title": "Memo Title",
+    "memo_details": "Memo Details",
+    "Event": "Event",
+    "references": "References",
+    "approval_steps": "Approval Steps",
+    "memo_status": "Memo Status",
+    "reference_value": "Reference Value"
+  },
+
+  "memo_approve": {
+    "approve_priority": "Approve Priority",
+    "decline_logic": "Decline Logic",
+    "is_same": "Is Same"
+  }
+}

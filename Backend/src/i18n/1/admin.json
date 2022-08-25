@@ -1,0 +1,20 @@
+{
+    "sys_users_create": "{code} Successfully Created!!",
+    "sys_users_create_error": "Error Found!!!! {code} table data not insert",
+    "sys_users_get": "Successfull retrieve {code} Data!!!",
+    "sys_users_get_error": "Error Found!!!! {code} table data not found!",
+    "sys_users_update": "Successfull Update {code} Data!!!",
+    "sys_users_update_error": "Error Found!!!! {code} table data not update!",
+    "sys_users_delete": "Successfull deleted {code} Data!!!",
+    "sys_users_delete_error": "Error Found!!!! {code} table data not deleted!"
+ ,
+
+    "sys_branchs_create": "{code} Successfully Created!!",
+    "sys_branchs_create_error": "Error Found!!!! {code} table data not insert",
+    "sys_branchs_get": "Successfull retrieve {code} Data!!!",
+    "sys_branchs_get_error": "Error Found!!!! {code} table data not update!",
+    "sys_branchs_update": "Successfull Update {code} Data!!!",
+    "sys_branchs_update_error": "Error Found!!!! {code} table data not update!",
+    "sys_branchs_delete": "Successfull deleted {code} Data!!!",
+    "sys_branchs_delete_error": "Error Found!!!! {code} table data not Deleted!"
+   }

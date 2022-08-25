@@ -1,0 +1,54 @@
+version: '3.9'
+# Intended for Development ONLY
+services:
+  redis: # Redis
+    image: redis:6-alpine
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+  app: # Main App
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: ific_erp
+    container_name: ific_erp
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    command: npm run start:dev
+    volumes:
+     - ./:/app
+     - /app/node_modules
+    depends_on:
+      - redis
+volumes:
+  dbdata:
+
+
+
+# version: "3.9"
+# # Intended for Development ONLY
+# services:
+#   redis: # Redis
+#     image: redis:6-alpine
+#     restart: unless-stopped
+#     ports:
+#       - 6379:6379
+#     logging:
+#       driver: none
+#   app: # Main App
+#     build: .
+#     env_file:
+#       - ./.env
+#     volumes:
+#       - ./src:/opt/app/src
+#     ports:
+#       - ${APP_PORT}:${APP_PORT}
+#     restart: unless-stopped
+#     depends_on:
+#       - redis
+# volumes:
+#   database_vol:

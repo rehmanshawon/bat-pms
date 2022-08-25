@@ -1,0 +1,10 @@
+{
+    "csa_file_docs_create": "csa_file_docs: {code} Successfully Created!!",
+    "csa_file_docs_create_error": "Error Found!!!!{code} table data not insert",
+    "csa_file_docs_get": "Successfull retrieve {code} Data!!!",
+    "csa_file_docs_get_error": "Error Found!!!!{code} table data not found!",
+    "csa_file_docs_update": "Successfull Update csa_file_docs {code} Data!!!",
+    "csa_file_docs_update_error": "Error Found!!!!{code} table data not update!",
+    "csa_file_docs_delete": "Successfull deleted csa_file_docs {code} Data!!!",
+    "csa_file_docs_delete_error": "Error Found!!!!{code} table data not deleted!"
+  }
