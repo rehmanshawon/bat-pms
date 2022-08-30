@@ -109,7 +109,7 @@ export async function getAuthorizedModules() {
   await fetchWrapper
     .get("modulechanger/authorized-list")
     .then((response) => {
-      alert({ response });
+      //alert({ response });
       localStorage.setItem("module_list", JSON.stringify(response.data));
     })
     .catch((error) => {

@@ -14,7 +14,7 @@ export const FormInput = ({
   ...rest
 }) => {
   // const [InputValue, setValue] = useState(props.value);
-
+//console.log(value);
   const handleChange = (event) => {
     const itemValue = event?.target?.value;
     // // setValue(itemValue);

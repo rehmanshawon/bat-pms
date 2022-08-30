@@ -1,5 +1,5 @@
-import "../styles/globals.css";
 import "../assets/styles.less";
+import "../styles/globals.css";
 //import 'antd/lib/style/index.less';
 //import 'antd/lib/avatar/style/index.less';
 
@@ -28,14 +28,14 @@ import { GlobalStyles } from "../components/styles/GlobalStyles";
 
 function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
-  useEffect(() => {
-    setShowChild(true);
+  useEffect(() => {    
     const handleRouteStart = () => NProgress.start();
     const handleRouteDone = () => NProgress.done();
 
     Router.events.on("routeChangeStart", handleRouteStart);
     Router.events.on("routeChangeComplete", handleRouteDone);
     Router.events.on("routeChangeError", handleRouteDone);
+    setShowChild(true);
 
     return () => {
       // Make sure to remove the event handler on unmount!
@@ -51,8 +51,7 @@ function MyApp({ Component, pageProps }) {
     return <></>;
   } else {
     return (
-      <>
-        <GlobalStyles />
+      <>        
         <Head>
           <meta
             name="viewport"
@@ -61,16 +60,14 @@ function MyApp({ Component, pageProps }) {
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <title>BAT - PMS</title>
-          {/* <link
-          href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-          crossOrigin="anonymous"
-        /> */}
-        </Head>
-        <AppProvider>
+          
+        </Head>        
+        <AppProvider>   
+        <GlobalStyles />     
           <Page>
             <RouteGuard>
               {/* <MsalProvider instance={MSalInstance}> */}
+              
               <Component {...pageProps} />
               {/* </MsalProvider> */}
             </RouteGuard>

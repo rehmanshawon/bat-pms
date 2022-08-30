@@ -100,9 +100,9 @@ const Page = ({ router, children }) => {
     });
   };
 
-  useEffect(() => {
-    callSocket();
-  }, []);
+  // useEffect(() => {
+  //   callSocket();
+  // }, []);
 
   useEffect(() => {
     setTimeout(() => {

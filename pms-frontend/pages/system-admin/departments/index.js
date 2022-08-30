@@ -5,20 +5,21 @@ import MasterGrid from "apsisEngine/common/mastergrid";
 import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Modal, Form } from "antd";
 import { swalConfirm } from "apsisEngine/helpers/helperService";
-import LocationForm from "components/common-feature/masterdata/LocationForm";
+import DepartmentForm from "components/common-feature/masterdata/DepartmentForm";
 import { useRouter } from "next/router";
 
-const LocationList = (props) => {
+const DepartmentList = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [editId, setEditId] = useState(null);
   const gridRef = useRef();
   const formRef = useRef();
-  const deleteLocation = useCallback(
+  const deleteDepartment = useCallback(
     (ids) => {
+      //console.log(ids.map(str=>Number(str)));
       swalConfirm("Are you sure?").then((result) => {
         if (result) {
           fetchWrapper
-          .patch("location/delete", {
+          .patch("department/delete", {
             ids: ids,
           })
             .then((res) => {
@@ -36,18 +37,18 @@ const LocationList = (props) => {
     [props]
   );
   const handleClick = (e, ids) => {
-    if (e.target.name == "createLocation") {
+    if (e.target.name == "createDepartment") {
       if (formRef.current) {
         formRef.current.resetForm();
       }
 
       setEditId(null);
       showModal();
-    } else if (e.target.name == "editLocation" && ids.length == 1) {
+    } else if (e.target.name == "editDepartment" && ids.length == 1) {
       setEditId(ids[0]);
       showModal();
-    } else if (e.target.name == "deleteLocation") {
-      deleteLocation(ids);
+    } else if (e.target.name == "deleteDepartment") {
+      deleteDepartment(ids);
     }
   };
   const showModal = useCallback(() => {
@@ -77,13 +78,13 @@ const LocationList = (props) => {
         <div>
           <Modal
             width={700}
-            title="Location Form"
+            title="Department Form"
             visible={modalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
             footer={null}
           >
-            <LocationForm
+            <DepartmentForm
               ref={formRef}
               editId={editId}
               gridRef={gridRef}
@@ -95,9 +96,9 @@ const LocationList = (props) => {
           <MasterGrid
             ref={gridRef}
             handleClick={handleClick}
-            title="Location List"
-            slug="location_list"
-            primaryKey="hidden_location_id"
+            title="Department List"
+            slug="department_list"
+            primaryKey="hidden_department_id"
           />
         </div>
       </div>
@@ -105,4 +106,4 @@ const LocationList = (props) => {
   );
 };
 
-export default LocationList;
+export default DepartmentList;

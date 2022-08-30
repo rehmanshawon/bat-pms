@@ -5,7 +5,7 @@ import {
 } from "apsisEngine/helpers/helperService";
 import { EyeTwoTone, MailTwoTone } from "@ant-design/icons";
 import { useMsal } from "@azure/msal-react";
-import { Button, Col, Form, Input, Message, Row, Spin } from "antd";
+import { Button, Col, Form, Input, message, Row, Spin } from "antd";
 import Link from "next/link";
 import { useState } from "react";
 import fetchWrapper from "../apsisEngine/helpers/fetchWrapper";
@@ -33,7 +33,7 @@ const Signin = () => {
           }
         })
         .catch((error) => {
-          Message.error("Login Error!");
+          message.error("Login Error!");
           console.log(error);
         });
     } else {
@@ -49,7 +49,7 @@ const Signin = () => {
           }
         })
         .catch((error) => {
-          Message.error("Login Error!");
+          message.error("Login Error!");
           console.log(error);
         });
     }
@@ -81,11 +81,11 @@ const Signin = () => {
           }
         })
         .catch((error) => {
-          Message.error("Login Error!");
+          message.error("Login Error!");
           console.log(error);
         });
     } catch (err) {
-      Message.error("Login Error!");
+      message.error("Login Error!");
     }
     setLoading(false);
   };
@@ -97,7 +97,7 @@ const Signin = () => {
       });
       getMSToken();
     } catch (err) {
-      Message.error("Microsoft Login Closed");
+      message.error("Microsoft Login Closed");
     }
   };
 
@@ -109,9 +109,26 @@ const Signin = () => {
   return (
     <>
       <Spin tip="Loading..." size="large" spinning={loading}>
-        <Row className="login-area">
+        <Row className="login-area" >
           <Col span={24} className="text-center">
-            <div className={`LoginSection`}>
+            <div className={`LoginSection`} style={{
+              boxSizing: 'border-box',
+
+             // position: 'absolute',
+             // width: '480px',
+             // height: '581px',
+              //left: '720px',
+             // top: '267px',
+              
+              /* Gradient 1 */
+              
+              background: 'linear-gradient(270deg, #004F9F 0%, #0088ff 100%)',
+              /* White */
+              
+              border: '1px solid #FFFFFF',
+              boxShadow: '0px 100px 142px -13px rgba(63, 130, 255, 0.07), 0px 66.7245px 85.8738px -13px rgba(63, 130, 255, 0.0531481), 0px 44.6296px 53.9074px -13px rgba(63, 130, 255, 0.0425185), 0px 30.3125px 37.7188px -13px rgba(63, 130, 255, 0.035), 0px 20.3704px 28.9259px -13px rgba(63, 130, 255, 0.0274815), 0px 11.4005px 19.147px -13px rgba(63, 130, 255, 0.0168519)',
+              borderRadius: '20px',
+            }}>
               <div className={`logoSection`}>
                 <Link href="/signin">
                   <a className="brand-logo">
@@ -119,8 +136,35 @@ const Signin = () => {
                   </a>
                 </Link>
               </div>
-              <h2 className="login-title">Login Account</h2>
-              <p className="login-sub">Enter your username and password</p>
+              <div style={{
+                width: '294px',
+                height: '44px',
+                left: '0px',
+                top: '0px',
+                
+                fontfamily: 'Arial',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                fontSize: '36px',
+                lineHeight: '44px',                
+                color: '#FFFFFF',
+              }}>Welcome to PMS</div> 
+
+              <div style={{
+                marginTop:20,
+                width: '344px',
+                height: '29px',
+                left: '0px',
+                top: '61px',
+                
+                fontfamily: 'Arial',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                fontSize: '24px',
+                lineHeight: '29px',                
+                color: '#E3F2FE',
+              }}>Enter your credentials to login</div>             
+              
               <Form
                 form={form}
                 layout="vertical"
@@ -130,9 +174,9 @@ const Signin = () => {
                 }}
               >
                 <FormItem
-                  label="Email/Username"
+                  //label="Email/Username"
                   name="email"
-                  style={{ marginBottom: 15 }}
+                  style={{ marginTop:40, marginBottom: 15 }}
                   rules={[
                     {
                       type: "string",
@@ -145,7 +189,16 @@ const Signin = () => {
                   ]}
                 >
                   <Input
-                    prefix={<MailTwoTone style={{ fontSize: "16px" }} />}
+                    prefix={<MailTwoTone style={{
+                      boxSizing: 'border-box',                            
+                            height: '40px',
+                            background: '#FFFFFF',
+                            border: '1px solid #F2F2F2',
+                            borderRadius: '10px',
+                            fontStyle: 'normal',
+                            fontWeight: 500,
+                            fontSize: '24px',
+                           }} />}
                     type="text"
                     autoComplete={"off"}
                     placeholder="Email/Username"
@@ -153,15 +206,24 @@ const Signin = () => {
                 </FormItem>
 
                 <FormItem
-                  label="Password"
+                  //label="Password"
                   name="password"
-                  style={{ marginBottom: 15 }}
+                  style={{marginTop:40, marginBottom: 15 }}
                   rules={[
                     { required: true, message: "Please input your Password!" },
                   ]}
                 >
                   <Input
-                    prefix={<EyeTwoTone style={{ fontSize: "16px" }} />}
+                          prefix={<EyeTwoTone style={{ 
+                            boxSizing: 'border-box',                            
+                            height: '40px',
+                            background: '#FFFFFF',
+                            border: '1px solid #F2F2F2',
+                            borderRadius: '10px',
+                            fontStyle: 'normal',
+                            fontWeight: 500,
+                            fontSize: '24px',
+                          }} />}
                     type="password"
                     placeholder="Password"
                   />
@@ -174,14 +236,51 @@ const Signin = () => {
                     block
                     className="mr-2"
                     style={{
-                      background: "#dddddd",
-                      borderColor: "#888888",
-                      color: "#000000",
+                      marginTop:20,
+                      color: "white",
+                      boxSizing: 'border-box',
+
+                      //width: '404px',
+                      height: '60px',
+
+                      /* Mid Blue */
+
+                      background: '#004F9F',
+                      /* grey color */
+
+                      border: '1px solid #F2F2F2',
+                      borderRadius: '10px',
+
+                      /* Inside auto layout */
+
+                      flex: 'none',
+                      order: 1,
+                      flexGrow: 0,
+                      marginBottom:10
                     }}
                   >
-                    Log in
+                    <div style={{
+                      position: 'absolute',
+                      width: '74px',
+                      height: '29px',
+                      left: '165px',
+                      top: '16px',
+                      
+                      fontFamily: 'Arial',
+                      fontStyle: 'bold',
+                      fontWeight: 500,
+                      fontSize: '24px',
+                      lineHeight: '29px',
+                      /* identical to box height */
+                      
+                      textTransform: 'uppercase',
+                      
+                      /* White */
+                      
+                      color: '#FFFFFF',
+                    }}>Log in</div>
                   </Button>
-                  <Button
+                  {/* <Button
                     type="primary"
                     onClick={adSubmit}
                     block
@@ -193,7 +292,7 @@ const Signin = () => {
                     }}
                   >
                     Log in With AD
-                  </Button>
+                  </Button> */}
                   {/* <Button
 										type="primary"
 										onClick={() => loginWithMS()}
@@ -209,23 +308,23 @@ const Signin = () => {
                 </div>
 
                 <div className="text-center">
-                  <small className="text-muted">
-                    <span>Don&apos;t have account access ? </span>
-                    <Link href="/forgot">
-                      <a className="text-xs-right">
-                        <small> Forgot password</small>
+                  {/* <small className="text-muted"> */}
+                    {/* <span>Don&apos;t have account access ? </span> */}
+                    <Link href="/forgot" >
+                      <a style={{color:'white',marginTop:10 }}>
+                         Forgot password?
                       </a>
                     </Link>
-                  </small>
+                  {/* </small> */}
                 </div>
-                <div className="text-center">
+                {/* <div className="text-center">
                   <small className="text-muted text-center">
                     <span>Don&apos;t have an account yet?</span>
                     <Link href="/signup">
                       <a>&nbsp;Create one now!</a>
                     </Link>
                   </small>
-                </div>
+                </div> */}
               </Form>
             </div>
           </Col>

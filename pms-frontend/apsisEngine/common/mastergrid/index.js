@@ -24,6 +24,7 @@ import {
 } from "apsisEngine/helpers/helpers";
 import router from "next/router";
 import { swalError } from "../formValidations";
+import { nanoid } from 'nanoid'
 
 export const MasterGrid = React.forwardRef(
   (
@@ -45,7 +46,7 @@ export const MasterGrid = React.forwardRef(
       extraButtons,
       getAllValue,
       disableButtons,
-      pager = [10, 20, 30, 50, 100],
+      pager = [10, 20,50, 100],
       footer = null,
       linkView,
       ...rest
@@ -133,7 +134,9 @@ export const MasterGrid = React.forwardRef(
           swalError("Please select at least one item");
         }
       } else {
+       // console.log(ids);
         handleClick(e, ids, rows);
+
       }
     };
 
@@ -203,7 +206,7 @@ export const MasterGrid = React.forwardRef(
           let newSelectedIds = selectedIds
             ? selectedIds.filter((id) => !removeIds.includes(id))
             : [];
-
+          //  console.log(selectedIds);
           setSelectedIds([...newSelectedIds, ...selectItem].filter(onlyUnique));
 
           //filter selected Items
@@ -334,7 +337,7 @@ export const MasterGrid = React.forwardRef(
           search_key: inputState,
           search_data: searchState ?? [],
         })
-        .then(async (res) => {
+        .then( (res) => {
           const {
             master_grid_title,
             buttons,
@@ -360,6 +363,7 @@ export const MasterGrid = React.forwardRef(
 
           //set total rows
           setTotalRows(total_item);
+          //console.log(total_item);
 
           if (
             page_customize &&
@@ -550,15 +554,17 @@ export const MasterGrid = React.forwardRef(
           });
 
           //when client side table store table data
-          // if (client_side) {
-          //   const data = items.map((item) => {
-          //     return {
-          //       key: String(item[primary_key_field]),
-          //       ...item,
-          //     };
-          //   });
-          //   setGridData(data);
-          // }
+          if (client_side) {
+            const data = items.map((item,index) => {
+              return {
+                key: String(item[primary_key_field]),
+               // key:nanoid(),//String(index+1),
+               //key:item.hidden_designation_id,
+                ...item,
+              };
+            });
+            setGridData(data);
+          }
           setSelectedIds([]);
           //set filtered column
           setColumnData(filteredColumn);
@@ -587,11 +593,13 @@ export const MasterGrid = React.forwardRef(
             const responseData = res.data.items;
             const data = responseData.map((item, index) => {
               return {
-                key: String(item[primaryKeyField]),
+                key:String(item[primaryKeyField]),
+               // key: nanoid(),//String(index+1),
+              // key:item.hidden_designation_id,
                 ...item,
               };
             });
-
+           //console.log(data);
             //set current instance
             setCurInstanceIds(data.map((item) => item.key));
 
@@ -755,7 +763,8 @@ export const MasterGrid = React.forwardRef(
         setReviseButton(buttonList);
       }
     }, [disableButtons, buttons, extraButtons]);
-
+    
+ // console.log(sourceData);
     return (
       <Fragment>
         <div className="master_grid">
@@ -853,3 +862,4 @@ export const MasterGrid = React.forwardRef(
   }
 );
 export default React.memo(MasterGrid);
+//export default MasterGrid;

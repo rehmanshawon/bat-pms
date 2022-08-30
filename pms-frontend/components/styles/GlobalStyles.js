@@ -6,9 +6,9 @@ import { objectToCamelCase } from "../../apsisEngine/helpers/helpers";
 const lessVariables = lessToJs(paletteLess, {
     resolveVariables: true,
     stripPrefix: true,
-  }),
-  camelCasedVariables = objectToCamelCase(lessVariables),
-  theme = {
+  });
+ const camelCasedVariables = objectToCamelCase(lessVariables);
+ const  theme = {
     ...camelCasedVariables,
   };
 

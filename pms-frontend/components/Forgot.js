@@ -1,4 +1,4 @@
-import { Button, Form, Input, Message, Row } from "antd";
+import { Button, Form, Input, message, Row } from "antd";
 import { MailTwoTone, PlaySquareTwoTone } from "@ant-design/icons";
 
 import Link from "next/link";
@@ -39,7 +39,7 @@ const Forgot = ({ form }) => (
           e.preventDefault();
           form.validateFields((err, values) => {
             if (!err) {
-              Message.success("Reset email sent. Please check your inbox!")
+              message.success("Reset email sent. Please check your inbox!")
                 .then(() => Router.push("/signin"))
                 .catch((error) => {
                   console.log(error);

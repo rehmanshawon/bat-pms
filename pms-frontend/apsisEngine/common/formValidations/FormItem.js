@@ -28,7 +28,7 @@ export const FormItem = ({
   ...rest
 }) => {
   const [validRules, setValidationRules] = useState([]);
-
+//console.log(field);
   const generateRules = () => {
     if (rules) {
       setValidationRules(rules);
