@@ -22,7 +22,7 @@ module.exports = withBundleAnalyzer( withLess( {
 			modifyVars: theme,
 		}
 	},
-	//target: "server",
+	target: "server",
 	productionBrowserSourceMaps: false,
 	publicRuntimeConfig: { theme },
 	reactStrictMode: true,

@@ -5,24 +5,21 @@ import MasterGrid from "apsisEngine/common/mastergrid";
 import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
 import { Modal, Form } from "antd";
 import { swalConfirm } from "apsisEngine/helpers/helperService";
-import DepartmentForm from "components/common-feature/masterdata/DepartmentForm";
+import RoleForm from "components/common-feature/masterdata/RoleForm";
 import { useRouter } from "next/router";
 
-const DepartmentList = (props) => {
+const RoleList = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [editId, setEditId] = useState(null);
   const gridRef = useRef();
   const formRef = useRef();
-  const deleteDepartment = useCallback(
+  const deleteRole = useCallback(
     (ids) => {
-      //console.log(ids.map(str=>Number(str)));
       swalConfirm("Are you sure?").then((result) => {
         if (result) {
           fetchWrapper
-          .patch("departments/delete", {
+          .patch("role/delete", {
             ids: ids,
-            department_code:'',
-            department_name:''
           })
             .then((res) => {
               if (!res.error) {
@@ -39,18 +36,19 @@ const DepartmentList = (props) => {
     [props]
   );
   const handleClick = (e, ids) => {
-    if (e.target.name == "createDepartment") {
+    if (e.target.name == "createRole") {
+      console.log('shawon');
       if (formRef.current) {
         formRef.current.resetForm();
       }
 
       setEditId(null);
       showModal();
-    } else if (e.target.name == "editDepartment" && ids.length == 1) {
+    } else if (e.target.name == "editRole" && ids.length == 1) {
       setEditId(ids[0]);
       showModal();
-    } else if (e.target.name == "deleteDepartment") {
-      deleteDepartment(ids);
+    } else if (e.target.name == "deleteRole") {
+      deleteRole(ids);
     }
   };
   const showModal = useCallback(() => {
@@ -80,13 +78,13 @@ const DepartmentList = (props) => {
         <div>
           <Modal
             width={700}
-            title="Department Form"
+            title="Role Form"
             visible={modalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
             footer={null}
           >
-            <DepartmentForm
+            <RoleForm
               ref={formRef}
               editId={editId}
               gridRef={gridRef}
@@ -98,9 +96,9 @@ const DepartmentList = (props) => {
           <MasterGrid
             ref={gridRef}
             handleClick={handleClick}
-            title="Department List"
-            slug="department_list"
-            primaryKey="hidden_department_id"
+            title="Role List"
+            slug="role_list"
+            primaryKey="hidden_role_id"
           />
         </div>
       </div>
@@ -108,4 +106,4 @@ const DepartmentList = (props) => {
   );
 };
 
-export default DepartmentList;
+export default RoleList;

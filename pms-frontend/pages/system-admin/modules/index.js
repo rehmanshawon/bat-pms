@@ -97,7 +97,7 @@ const ModuleList = (props) => {
             handleClick={handleClick}
             title="Module List"
             slug="module_list"
-            primaryKey="hidden_bat_module_id"
+            primaryKey="hidden_module_id"
           />
         </div>
       </div>

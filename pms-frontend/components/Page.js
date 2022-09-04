@@ -11,6 +11,7 @@ import SidebarMenu from "./SidebarMenu";
 import { theme } from "./styles/GlobalStyles";
 import { Container, Inner } from "./styles/Page";
 import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
+import PmsSidebarMenu from "./PmsSidebarMenu";
 
 const { Content } = Layout;
 const NonDashboardRoutes = [
@@ -134,6 +135,7 @@ const Page = ({ router, children }) => {
                 sidebarIcons={state.sidebarIcons}
                 collapsed={state.collapsed}
               />
+              // <PmsSidebarMenu/>
             )}
 
             {/* <Layout> */}

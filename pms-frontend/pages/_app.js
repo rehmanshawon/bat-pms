@@ -1,5 +1,5 @@
-import "../assets/styles.less";
-import "../styles/globals.css";
+ import "../assets/styles.less";
+ import "../styles/globals.css";
 //import 'antd/lib/style/index.less';
 //import 'antd/lib/avatar/style/index.less';
 

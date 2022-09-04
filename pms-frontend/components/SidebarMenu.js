@@ -118,6 +118,12 @@ const SidebarContent = ({
       setOpenKeys(latestOpenKey ? [...latestOpenKey] : []);
     }
   };
+  function changeBackground(e) {
+    e.target.style.background = '#004F9F';
+  }
+  function removeBackground(e){
+    e.target.style.background = '#0E2B63';
+  }
   const buildSubmenu = (data, index) => {
     if (data.children.length <= 0) {
       return (
@@ -125,8 +131,10 @@ const SidebarContent = ({
           key={data.menu_id}
           className={data.menu_url == pathname ? "menu-active" : ""}
           style={{
-            background: "linear-gradient(to left, #003578 , #0078D4)",
+            background:'#0E2B63',// "linear-gradient(to left, #003578 , #0078D4)",
           }}
+          // onMouseOver={changeBackground}
+          // onMouseOut={removeBackground}
         >
           <Link href={data.menu_url}>
             <a>
@@ -142,13 +150,15 @@ const SidebarContent = ({
       return (
         <SubMenu
           key={data.menu_id}
-          icon={<i className={`${data.menu_icon_class} mr-1`}></i>}
+          icon={<i className={`${data.menu_icon_class} mr-1`} ></i>}
           title={data.menu_name}
           className={data.menu_url == pathname ? "menu-active" : ""}
           style={{
             fontSize: "16px",
-            background: "linear-gradient(to left, #004578 , #0078D4)",
+            background:'#0E2B63',// "linear-gradient(to left, #004578 , #0078D4)",
           }}
+        //   onMouseOver={changeBackground}
+        // onMouseOut={removeBackground}
         >
           {data.children.map((route, index) => {
             return buildSubmenu(route, index);
@@ -177,10 +187,12 @@ const SidebarContent = ({
         inlineIndent={10}
         theme={sidebarTheme}
         className="border-0 scroll-y sidebar"
+        // onMouseOver={changeBackground}
+        // onMouseOut={removeBackground}
         style={{
           flex: 1,
           height: "100%",
-          background: "linear-gradient(to left, #004578 , #0078D4)",
+          background:'#0E2B63',// "linear-gradient(to left, #004578 , #0078D4)",
         }}
         mode={sidebarMode ?? "inline"}
         openKeys={openKeys}
@@ -192,6 +204,7 @@ const SidebarContent = ({
       </Menu>
 
       <Divider
+      
         className={`m-0`}
         style={{
           display: `${sidebarTheme === "dark" ? "none" : ""}`,
@@ -261,9 +274,12 @@ const SidebarContent = ({
             theme={sidebarTheme}
             collapsed={collapsed}
             style={{
-              backgroundColor: "linear-gradient(to right, #4880EC, #019CAD)",
+              backgroundColor:'#004F9F',// "linear-gradient(to right, #4880EC, #019CAD)",
               fontSize: "16px",
             }}
+        //     onMouseOver={changeBackground}
+        // onMouseOut={removeBackground}
+           
           >
             {menu}
           </Sider>
@@ -314,6 +330,7 @@ const SidebarContent = ({
           width={300}
           onClose={() => dispatch({ type: "options" })}
           visible={state.optionDrawer}
+          
         >
           <List.Item
             actions={[
@@ -344,6 +361,7 @@ const SidebarContent = ({
                 checked={!!state.darkSidebar}
                 disabled={state.weakColor}
                 onChange={(checked) => dispatch({ type: "sidebarTheme" })}
+                
               />,
             ]}
           >

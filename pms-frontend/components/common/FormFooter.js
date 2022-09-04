@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'antd';
 import router from 'next/router';
-import $ from 'jquery';
+//import $ from 'jquery';
 
 export function FormFooter({
 	backLink,

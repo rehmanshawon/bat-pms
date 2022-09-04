@@ -97,7 +97,7 @@ const RatingList = (props) => {
             handleClick={handleClick}
             title="Rating List"
             slug="rating_list"
-            primaryKey="hidden_rating_id"
+            primaryKey="hidden_rating_definition_id"
           />
         </div>
       </div>
