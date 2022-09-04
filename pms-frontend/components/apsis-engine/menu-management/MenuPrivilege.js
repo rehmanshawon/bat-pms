@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
-import { FormItem } from "@/apsisEngine/common/formValidations";
-import { swalSuccess } from "@/apsisEngine/helpers/helperService";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
+import { FormItem } from "apsisEngine/common/formValidations";
+import { swalSuccess } from "apsisEngine/helpers/helperService";
 import { Tree, Form, Button, Col } from "antd";
 
 const MenuPrivilege = () => {

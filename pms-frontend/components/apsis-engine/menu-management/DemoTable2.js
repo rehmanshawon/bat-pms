@@ -1,4 +1,4 @@
-import { Wrapper } from "@/components/styles/Taskboard";
+import { Wrapper } from "components/styles/Taskboard";
 import React, {
   useState,
   useEffect,
@@ -7,8 +7,8 @@ import React, {
 } from "react";
 import SortableTree from "react-sortable-tree";
 import "react-sortable-tree/style.css";
-import fetchWrapper from "@/apsisEngine/helpers/fetchWrapper";
-import { swalError, swalSuccess } from "@/apsisEngine/helpers/helperService";
+import fetchWrapper from "apsisEngine/helpers/fetchWrapper";
+import { swalError, swalSuccess } from "apsisEngine/helpers/helperService";
 
 import {
   EditOutlined,
