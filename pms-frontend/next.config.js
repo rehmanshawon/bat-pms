@@ -21,8 +21,7 @@ module.exports = withBundleAnalyzer( withLess( {
 			javascriptEnabled: true,			
 			modifyVars: theme,
 		}
-	},
-	target: "server",
+	},	
 	productionBrowserSourceMaps: false,
 	publicRuntimeConfig: { theme },
 	reactStrictMode: true,
